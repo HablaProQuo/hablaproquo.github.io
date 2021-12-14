@@ -1,0 +1,404 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ángel Alonso">
+    <meta property="og:image" content="Img/logo.png">
+    <meta property="og:description" content="Programa para personas con dificultades de habla.">
+    <meta name="description" content="Programa para personas con dificultades de habla.">
+    <meta name="rights" content="Programa para personas con dificultades de habla."/>
+    <meta name="keywords" content="Programa para personas con dificultades de habla."/>
+    <meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+
+    <title>Habla Pro Quo Web</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
+    authDomain: "habla-pro-quo-94809.firebaseapp.com",
+    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
+    projectId: "habla-pro-quo-94809",
+    storageBucket: "habla-pro-quo-94809.appspot.com",
+    messagingSenderId: "744007858248",
+    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
+    measurementId: "G-YV7XZEQ4XD"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+</head>
+<style>
+
+</style>
+
+<script>
+var idioma = "zh_CN"
+    
+    function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+        let utterance = new SpeechSynthesisUtterance(mensaje)
+        utterance.lang = idioma
+        speechSynthesis.speak(utterance)
+    }
+    
+
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        }
+        
+    function info() {open("chino-info.html")};
+</script>
+
+<body onload="">
+    <center>
+    <div class="cajon">
+
+<center>
+    <textarea placeholder="在這裡寫下您的訊息" id="mensaje" rows="7" cols="50"></textarea>
+
+<button class="button naranja" onclick="hablar()">談論</button>
+<button class="button rojo" onclick="borrar()">刪除</button>
+<br>
+</center>
+
+<br><br>
+
+<texto><i><center>象形圖</center></i></texto><br>
+
+<table onclick="imagen1()">
+    <tr>
+    <th><img src="Img/img1.png" alt="Imagen" width="40" height="40"></th>
+    <td>是</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen2()">
+    <tr>
+    <th><img src="Img/img2.png" alt="Imagen" width="40" height="40"></th>
+    <td>沒有</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen3()">
+    <tr>
+    <th><img src="Img/img3.png" alt="Imagen" width="40" height="40"></th>
+    <td>早上好</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen4()">
+    <tr>
+    <th><img src="Img/img4.png" alt="Imagen" width="40" height="40"></th>
+    <td>下午好</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img5.png" alt="Imagen" width="40" height="40"></th>
+    <td>晚安</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen5()">
+    <tr>
+    <th><img src="Img/img6.png" alt="Imagen" width="40" height="40"></th>
+    <td>救命</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen6()">
+    <tr>
+    <th><img src="Img/img7.png" alt="Imagen" width="40" height="40"></th>
+    <td>我要去洗個澡</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen7()">
+    <tr>
+    <th><img src="Img/img8.png" alt="Imagen" width="40" height="40"></th>
+    <td>你有充電器嗎？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen8()">
+    <tr>
+    <th><img src="Img/img9.png" alt="Imagen" width="40" height="40"></th>
+    <td>請問你貴姓大名？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen9()">
+    <tr>
+    <th><img src="Img/img11.png" alt="Imagen" width="40" height="40"></th>
+    <td>多少錢？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen10()">
+    <tr>
+    <th><img src="Img/img12.png" alt="Imagen" width="40" height="40"></th>
+    <td>哪裡？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen11()">
+    <tr>
+    <th><img src="Img/img13.png" alt="Imagen" width="40" height="40"></th>
+    <td>洗手間在哪裡？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen12()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>我要睡覺了</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen13()">
+    <tr>
+    <th><img src="Img/img16.png" alt="Imagen" width="40" height="40"></th>
+    <td>我餓了</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen14()">
+    <tr>
+    <th><img src="Img/img17.png" alt="Imagen" width="40" height="40"></th>
+    <td>請</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen15()">
+    <tr>
+    <th><img src="Img/img18.png" alt="Imagen" width="40" height="40"></th>
+    <td>什麼？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen16()">
+    <tr>
+    <th><img src="Img/img19.png" alt="Imagen" width="40" height="40"></th>
+    <td>您的</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen17()">
+    <tr>
+    <th><img src="Img/img21.png" alt="Imagen" width="40" height="40"></th>
+    <td>我很開心</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen18()">
+    <tr>
+    <th><img src="Img/img22.png" alt="Imagen" width="40" height="40"></th>
+    <td>我很熱</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen19()">
+    <tr>
+    <th><img src="Img/img23.png" alt="Imagen" width="40" height="40"></th>
+    <td>我很生氣</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen20()">
+    <tr>
+    <th><img src="Img/img24.png" alt="Imagen" width="40" height="40"></th>
+    <td>下雨了</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen21()">
+    <tr>
+    <th><img src="Img/img26.png" alt="Imagen" width="40" height="40"></th>
+    <td>多雲</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen22()">
+    <tr>
+    <th><img src="Img/img27.png" alt="Imagen" width="40" height="40"></th>
+    <td>有風的</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen23()">
+    <tr>
+    <th><img src="Img/img28.png" alt="Imagen" width="40" height="40"></th>
+    <td>天氣晴朗</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen24()">
+    <tr>
+    <th><img src="Img/img29.png" alt="Imagen" width="40" height="40"></th>
+    <td>現在是幾奌？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>晚安</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen26()">
+    <tr>
+    <th><img src="Img/img10.png" alt="Imagen" width="40" height="40"></th>
+    <td>你能砍我一下嗎？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen27()">
+    <tr>
+    <th><img src="Img/img15.png" alt="Imagen" width="40" height="40"></th>
+    <td>我心情不好</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen28()">
+    <tr>
+    <th><img src="Img/img20.png" alt="Imagen" width="40" height="40"></th>
+    <td>我很冷</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen29()">
+    <tr>
+    <th><img src="Img/img25.png" alt="Imagen" width="40" height="40"></th>
+    <td>下雪了</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen30()">
+    <tr>
+    <th><img src="Img/img30.png" alt="Imagen" width="40" height="40"></th>
+    <td>我可以玩？</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen31()">
+    <tr>
+    <th><img src="Img/img31.png" alt="Imagen" width="40" height="40"></th>
+    <td>你好</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen32()">
+    <tr>
+    <th><img src="Img/img32.png" alt="Imagen" width="40" height="40"></th>
+    <td>我的肚子疼</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen33()">
+    <tr>
+    <th><img src="Img/img33.png" alt="Imagen" width="40" height="40"></th>
+    <td>我頭疼</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen34()">
+    <tr>
+    <th><img src="Img/img34.png" alt="Imagen" width="40" height="40"></th>
+    <td>我背痛</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen35()">
+    <tr>
+    <th><img src="Img/img35.png" alt="Imagen" width="40" height="40"></th>
+    <td>我的喉嚨疼</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen36()">
+    <tr>
+    <th><img src="Img/img36.png" alt="Imagen" width="40" height="40"></th>
+    <td>我的胸部很痛</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen37()">
+    <tr>
+    <th><img src="Img/img37.png" alt="Imagen" width="40" height="40"></th>
+    <td>我的膝蓋疼</td>
+    </tr>
+</table>
+
+<table onclick="imagen39()">
+    <tr>
+    <th><img src="Img/img39.png" alt="Imagen" width="40" height="40"></th>
+    <td>請保持距離</td>
+    </tr>
+</table>
+
+<script src='chino.js'></script>
+
+
+<div id="info">
+<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168108945-1');
+</script>
+
+<body onload="cargar()">
+</html>
