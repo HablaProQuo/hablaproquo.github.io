@@ -1,0 +1,154 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+
+<script>
+    var mensaje="Vous pouvez maintenant télécharger gratuitement l'application Habla Pro Quo à partir de ce lien https://play.google.com/store/apps/details?id=com.hablaproquo\n\nEn quoi consiste-t-il? \nGive un peu d'aide pour personnes ayant des difficultés de communication. \n\nN'est-ce pas pris en charge? \nVous pouvez obtenir une version en ligne à partir de ce lien http://hablaproquo2.000webhostapp.com/"
+    function whatsapp() {
+        app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+        }
+    
+    function facebook() {
+        app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo");
+        }
+    
+    function twitter() {
+        app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+        }
+        
+    function qr() {
+	isChrome = app.IsChrome();
+    dlgDemo = app.CreateDialog( "Qr" );
+    dlgDemo.SetBackColor( "#bb000000" );
+    layDemo = app.CreateLayout( "linear", "vertical,fillxy" );
+    layDemo.SetPadding( 0.03, 0.015, 0.03, 0.015 );
+
+    webDemo = app.CreateWebView( isChrome?0.5:0.95, 0.80, "IgnoreErrors" );
+    layDemo.AddChild( webDemo );
+
+    dlgDemo.AddLayout( layDemo );
+    dlgDemo.Show();
+
+    webDemo.LoadUrl( "qr.html" );
+        }
+</script>
+
+	<style type="text/css" media="screen">
+	titulo1 {
+	    float: center;
+	    color: #333;
+	    }
+	
+	dato1 {
+	    float: right;
+	    font-size: 130%
+	    }
+	    
+    dato2 {
+        float: left;
+        }
+
+	.titulo {
+		font-family: sans-serif;
+		text-align: center;
+		font-size: x-large;
+		font-weight: bolder;
+		margin-top: 1em;
+		}
+	
+	caja {
+	    border-radius: 50px;
+	    background: linear-gradient(145deg, #fd8900, #d47300);
+	    box-shadow:  20px 20px 60px #c96d00,
+	    -20px -20px 60px #ff9300;
+	    }
+	    
+    tabla {
+        margin-bottom: 10%;
+        box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+        border-radius:15px;
+        border-collapse: collapse;
+        float: right;
+        }
+    
+    p {
+        padding-left: 5%;
+        }
+	    
+	</style>
+</head> 
+
+<body>
+<div class="caja">
+  <td><strong><a class="inicio rojo" href="francais.html">Début</a></strong></td>
+<br><br>
+<tabla>
+    <div class="titulo">
+        Politique d'utilisation
+    </div>
+    
+    <div class="texto">
+        <p>Cette application ne transmet aucune information personnelle sans le consentement des utilisateurs. Les services avec lesquels cette application fonctionne n'utilisent ni ne divulguent aucune information personnelle.</p>
+    </div>
+</tabla>
+
+<tabla>
+	<div class="titulo">
+		Pictogrammes personnels
+	</div>
+	
+	<div class="texto">
+	    <p>Un seul mot peut figurer dans le titre. Lors de la création d'un nouveau pictogramme avec le même nom qu'un autre créé, il disparaîtra.</p>
+	</div>
+</tabla>
+
+<tabla>
+	<div class="titulo">
+		Information complémentaire
+	</div>
+	
+	<div class="texto">
+	    <p>Cette application est conçue par Ángel Alonso Ramírez, étudiant à IES Lomo de la Herradura. L'application est conçue pour que les personnes ayant des difficultés d'élocution puissent communiquer. Avez-vous des questions ou pouvez-vous me contacter à partir de cette adresse e-mail? <font color="blue" OnClick="app.SendMail( 'angel.731998@gmail.com');"><i><u>angel.731998@gmail.com</u></i></font></p>
+	</div>
+</tabla>
+<br>
+
+<table id="info">
+    <td><texto2>Partager</texto2><br></td>
+    <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height 30px;"><br></td>
+    <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/qr.png" onclick="qr()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+</table>
+</div>
+
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
+
+		<td><div id="estilo"></td>
+
+
+<body onload="estilo()"></html>
