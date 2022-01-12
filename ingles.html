@@ -41,15 +41,25 @@
 
 <script>
 var idioma = "en_GB"
-    
-    function hablar() {
-        var mensaje = document.getElementById('mensaje').value;
-        let utterance = new SpeechSynthesisUtterance(mensaje)
-        utterance.lang = idioma
-        speechSynthesis.speak(utterance)
-    }
-    
+        var URLdomain = window.location.host;
 
+function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+
+    if (URLdomain==="") { 
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje )
+        app.Vibrate( "0,100,30,100,50,300" );
+        } else {
+            let utterance = new SpeechSynthesisUtterance(mensaje)
+            utterance.lang = idioma
+            speechSynthesis.speak(utterance)
+            }
+        }
+        
+    
     function borrar() {
         document.getElementById("mensaje").value = "";
         }
