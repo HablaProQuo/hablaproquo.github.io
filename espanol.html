@@ -1,74 +1,85 @@
 <html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Ángel Alonso">
-    <meta property="og:image" content="Img/logo.png">
-    <meta property="og:description" content="Programa para personas con dificultades de habla.">
-    <meta name="description" content="Programa para personas con dificultades de habla.">
-    <meta name="rights" content="Programa para personas con dificultades de habla."/>
-    <meta name="keywords" content="Programa para personas con dificultades de habla."/>
-    <meta property="og:title" content="Habla Pro Quo">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
     <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
-
-    <title>Habla Pro Quo Web</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
     
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
-
-<script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
-    authDomain: "habla-pro-quo-94809.firebaseapp.com",
-    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
-    projectId: "habla-pro-quo-94809",
-    storageBucket: "habla-pro-quo-94809.appspot.com",
-    messagingSenderId: "744007858248",
-    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
-    measurementId: "G-YV7XZEQ4XD"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
-
-
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+  <script>
+  var permisos = ""
+  </script>
 </head>
-<style>
 
-</style>
-
+<style>body {background: #f68704;}</style>
 <script>
 var idioma = "es_ES"
-    
-    function hablar() {
 var URLdomain = window.location.host;
-alert(URLdomain);
-        var mensaje = document.getElementById('mensaje').value;
-        let utterance = new SpeechSynthesisUtterance(mensaje)
-        utterance.lang = idioma
-        speechSynthesis.speak(utterance)
-    }
-    
 
+function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+
+    if (URLdomain==="") { 
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje )
+        app.Vibrate( "0,100,30,100,50,300" );
+        } else {
+            let utterance = new SpeechSynthesisUtterance(mensaje)
+            utterance.lang = idioma
+            speechSynthesis.speak(utterance)
+            }
+        }
+        
+    
     function borrar() {
         document.getElementById("mensaje").value = "";
+        app.Vibrate( "0,100,30,100,50,300" );
         }
         
     function info() {open("espanol-info.html")};
+    function prediseño() {
+        name = app.GetName();
+        
+        if (name==="DroidScript") {
+            open("/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/Hablaproquo/espanol.html");
+            } else {
+                open("/sdcard/Android/data/com.hablaproquo/files/Hablaproquo/espanol.html");
+                }};
 </script>
 
-<body onload="">
-    <center>
-    <div class="cajon">
- 
+        <script>
+        function personal() {
+            var name = app.GetAppName();
+            if (name==="") {
+                } else {
+                var todo='<button class="button naranja" onclick="prediseño()">Personales</button>'
+                document.getElementById("personal").innerHTML = todo;
+                    }
+            }
+        </script>
+
+<body>
+
+<div class="caja">
 <center>
     <textarea placeholder="Escribe el mensaje aquí..." id="mensaje" rows="7" cols="50"></textarea>
 
 <button class="button naranja" onclick="hablar()">HABLAR</button>
 <button class="button rojo" onclick="borrar()">BORRAR</button>
 <br>
+        <div id="personal">
 </center>
 
 <br><br>
@@ -392,15 +403,18 @@ alert(URLdomain);
 <input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
 </div>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
 
-  gtag('config', 'UA-168108945-1');
-</script>
+		<td><div id="estilo"></td>
 
-<body onload="cargar()">
-</html>
+
+<body onload="personal(),estilo()"></html>

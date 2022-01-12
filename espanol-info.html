@@ -9,51 +9,49 @@
 	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
 	<meta property="og:title" content="Habla Pro Quo">
     <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
-
-	<title>Habla Pro Quo Web</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
     
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
-
-<script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
-    authDomain: "habla-pro-quo-94809.firebaseapp.com",
-    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
-    projectId: "habla-pro-quo-94809",
-    storageBucket: "habla-pro-quo-94809.appspot.com",
-    messagingSenderId: "744007858248",
-    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
-    measurementId: "G-YV7XZEQ4XD"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
 
 <script>
     var mensaje="Ya puedes descargar totalmente gratuita la app, Habla Pro Quo desde este enlace https://play.google.com/store/apps/details?id=com.hablaproquo\n\n¿En que consiste?\nDa un pequeño apoyo a personas con dificultad al comunicarse.\n\n¿No es compatible?\nPodrá obtener una versión online desde este enlace http://hablaproquo2.000webhostapp.com/"
-    
     function whatsapp() {
-        location.href = "https://api.whatsapp.com/send?text=" + mensaje
+        app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
         }
     
     function facebook() {
-        location.href = "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo"
+        app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo");
         }
     
     function twitter() {
-        location.href = "http://twitter.com/home?status=" + mensaje
+        app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+        }
+        
+    function qr() {
+	isChrome = app.IsChrome();
+    dlgDemo = app.CreateDialog( "Qr" );
+    dlgDemo.SetBackColor( "#bb000000" );
+    layDemo = app.CreateLayout( "linear", "vertical,fillxy" );
+    layDemo.SetPadding( 0.03, 0.015, 0.03, 0.015 );
+
+    webDemo = app.CreateWebView( isChrome?0.5:0.95, 0.80, "IgnoreErrors" );
+    layDemo.AddChild( webDemo );
+
+    dlgDemo.AddLayout( layDemo );
+    dlgDemo.Show();
+
+    webDemo.LoadUrl( "qr.html" );
         }
 </script>
 
 	<style type="text/css" media="screen">
-titulo1 {
-	float: center;
-	color: #333;
-}
+	titulo1 {
+	    color: #333;
+	    }
 	
 	dato1 {
 	    float: right;
@@ -64,68 +62,87 @@ titulo1 {
         float: left;
         }
 
-		.titulo {
-			font-family: sans-serif;
-			text-align: center;
-			font-size: x-large;
-			font-weight: bolder;
-			margin-top: 1em;
+	.titulo {
+		font-family: sans-serif;
+		text-align: center;
+		font-size: x-large;
+		font-weight: bolder;
+		margin-top: 1em;
 		}
+	    
+    tabla {
+        margin-bottom: 10%;
+        box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+        border-radius:15px;
+        border-collapse: collapse;
+        float: right;
+        }
+    
+    p {
+        padding-left: 5%;
+        }
+	    
 	</style>
 </head> 
 
 <body>
-	<center>
-	<div class="cajon">
-
-	<div class="titulo center">
-		<p>Politica de uso</p>
-	</div>
-	<div class="texto center">
-		<p>Esta aplicación no transmite ninguna información personal sin el consentimiento de los usuarios. Los servicios con los que trabaja esta aplicación no utilizan, ni divulgan información personal.</p>
-	</div><hr>
-
-	<div class="titulo center">
-		<p>Información adicional</p>
-	</div>
-	<div class="texto center">
-	    <p>Esta app esta diseñada por Ángel Alonso Ramírez, alumno del IES Lomo de la Herradura.</p>
-		<p>La app está diseñada para que personas con dificultades de habla puedan comunicarse.</p>
-		</div><hr>
-
-	<div class="titulo center">
-		<p>Pictogramas personalizados</p>
-	</div>
-	<div class="texto center">
-	    <p>En el titulo solo puede ir una palabra.</p>
-		<p>Al crear un pictograma nuevo con el mismo nombre a otro creado, este desaparecerá.</p>
-		</div><hr>
+<div class="caja">
+  <td><strong><a class="inicio rojo" href="espanol.html">Inicio</a></strong></td>
+<br><br>
+<tabla>
+    <div class="titulo">
+        Politica de uso
+    </div>
+    
+    <div class="texto">
+        <p>Esta aplicación no transmite ninguna información personal sin el consentimiento de los usuarios. Los servicios con los que trabaja esta aplicación no utilizan, ni divulgan información personal.</p>
+    </div>
+</tabla>
 
 
-	<div class="titulo center">
-		<p>¿Alguna duda o sugerencia?</p>
+<tabla>
+	<div class="titulo">
+		Pictogramas personales
 	</div>
-	<div class="texto center">
-<p>Puedes contactar conmigo desde este correo electronico <font color="blue" OnClick="app.SendMail( 'angel.731998@gmail.com');"><i><u>angel.731998@gmail.com</u></i></font></p>
+	
+	<div class="texto">
+	    <p>En el titulo solo puede ir una palabra.
+	    Al crear un pictograma nuevo con el mismo nombre a otro creado, este desaparecerá.</p>
 	</div>
+</tabla>
+
+<tabla>
+	<div class="titulo">
+		Información adicional
+	</div>
+	
+	<div class="texto">
+	    <p>Esta app esta diseñada por Ángel Alonso Ramírez, alumno del IES Lomo de la Herradura. La app está diseñada para que personas con dificultades de habla puedan comunicarse. Puedes contactar conmigo desde este correo electronico <font color="blue" OnClick="app.SendMail( 'angel.731998@gmail.com');"><i><u>angel.731998@gmail.com</u></i></font></p>
+	</div>
+</tabla>
 <br>
 
 <table id="info">
     <td><texto2>Compartir</texto2><br></td>
     <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
-    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height: 30px;"><br></td>
     <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/qr.png" onclick="qr()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
 </table>
+</div>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
 
-  gtag('config', 'UA-168108945-1');
-</script>
+		<td><div id="estilo"></td>
 
-<body onload="cargar()">
-</html>
+
+<body onload="estilo()"></html>
