@@ -1,0 +1,115 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+
+	<title>Habla Pro Quo Web</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
+    authDomain: "habla-pro-quo-94809.firebaseapp.com",
+    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
+    projectId: "habla-pro-quo-94809",
+    storageBucket: "habla-pro-quo-94809.appspot.com",
+    messagingSenderId: "744007858248",
+    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
+    measurementId: "G-YV7XZEQ4XD"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</head>
+
+
+<script>
+function espanol() {location.href = "espanol.html"}
+function ingles() {location.href = "ingles.html"}
+function aleman() {location.href = "aleman.html"}
+function japones() {location.href = "japones.html"}
+function chino() {location.href = "chino.html"}
+function portugues() {location.href = "portugues.html"}
+function frances() {location.href = "francais.html"}
+function multi() {location.href = "multi.html"}
+
+</script>
+
+	<center>
+	<div class="cajon">
+<table onclick="espanol()">
+		<tr>
+		<th><img src="Img/ban1.png" alt="Imagen" width="75" height="50"></th>
+		<td>Español</td>
+		</tr>
+</table>
+
+<table onclick="ingles()">
+		<tr>
+		<th><img src="Img/ban2.png" alt="Imagen" width="75" height="50"></th>
+		<td>English</td>
+		</tr>
+</table>
+
+<table onclick="aleman()">
+		<tr>
+		<th><img src="Img/ban3.png" alt="Imagen" width="75" height="50"></th>
+		<td>Deutsch</td>
+		</tr>
+</table>
+
+<table onclick="japones()">
+		<tr>
+		<th><img src="Img/ban4.png" alt="Imagen" width="75" height="50"></th>
+		<td>日本</td>
+		</tr>
+</table>
+
+<table onclick="chino()">
+		<tr>
+		<th><img src="Img/ban5.png" alt="Imagen" width="75" height="50"></th>
+		<td>中国</td>
+		</tr>
+</table>
+
+<table onclick="portugues()">
+		<tr>
+		<th><img src="Img/ban6.png" alt="Imagen" width="75" height="50"></th>
+		<td>Português</td>
+		</tr>
+</table>
+
+<table onclick="frances()">
+		<tr>
+		<th><img src="Img/ban7.png" alt="Imagen" width="75" height="50"></th>
+		<td>Français</td>
+		</tr>
+</table>
+
+</div>
+</center>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168108945-1');
+</script>
+
+<body onload="cargar()">
+</html>

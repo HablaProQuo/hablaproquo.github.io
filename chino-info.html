@@ -1,0 +1,131 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+
+	<title>Habla Pro Quo Web</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
+    authDomain: "habla-pro-quo-94809.firebaseapp.com",
+    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
+    projectId: "habla-pro-quo-94809",
+    storageBucket: "habla-pro-quo-94809.appspot.com",
+    messagingSenderId: "744007858248",
+    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
+    measurementId: "G-YV7XZEQ4XD"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+<script>
+    var mensaje="您现在可以从此链接下载免费的应用程序 Habla Pro Quo https://play.google.com/store/apps/details?id=com.hablaproquo\n\n它由什么组成？\n对沟通困难的人提供少量支持.\n\n它不兼容吗？\n您可以从此链接获取在线版本 http://hablaproquo2.000webhostapp.com/"
+
+    function whatsapp() {
+        location.href = "https://api.whatsapp.com/send?text=" + mensaje
+        }
+    
+    function facebook() {
+        location.href = "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo"
+        }
+    
+    function twitter() {
+        location.href = "http://twitter.com/home?status=" + mensaje
+        }
+</script>
+
+	<style type="text/css" media="screen">
+titulo1 {
+	float: center;
+	color: #333;
+}
+	
+	dato1 {
+	    float: right;
+	    font-size: 130%
+	    }
+	    
+    dato2 {
+        float: left;
+        }
+
+		.titulo {
+			font-family: sans-serif;
+			text-align: center;
+			font-size: x-large;
+			font-weight: bolder;
+			margin-top: 1em;
+		}
+	</style>
+</head> 
+
+<body>
+	<center>
+	<div class="cajon">
+
+	<div class="titulo center">
+		<p>使用政策</p>
+	</div>
+	<div class="texto center">
+		<p>未经用户同意，本应用程序不会传输任何个人信息。 用于此应用程序的服务不使用 不要透露个人信息。</p>
+	</div><hr>
+
+	<div class="titulo center">
+		<p>其他信息</p>
+	</div>
+	<div class="texto center">
+	    <p>此应用程序由 Ángel Alonso Ramírez 设计。  IES Lomo de la Herradura的学生</p>
+		<p>该应用程序的设计使得有语言障碍的人可以进行交流</p>
+		</div><hr>
+
+	<div class="titulo center">
+		<p>自定义象形图</p>
+	</div>
+	<div class="texto center">
+	    <p>标题中只能有一个单词</p>
+		<p>如果您创建一个与另一个图标同名的新图标，它将消失</p>
+		</div><hr>
+
+
+	<div class="titulo center">
+		<p>有任何问题或建议吗？</p>
+	</div>
+	<div class="texto center">
+<p>您可以通过此电子邮件与我联系 <font color="blue" OnClick="app.SendMail( 'angel.731998@gmail.com');"><i><u>angel.731998@gmail.com</u></i></font></p>
+	</div>
+<br>
+
+<table id="info">
+    <td><texto2>分享</texto2><br></td>
+    <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height 30px;"><br></td>
+    <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+</table>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168108945-1');
+</script>
+
+<body onload="cargar()">
+</html>

@@ -1,0 +1,413 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ángel Alonso">
+    <meta property="og:image" content="Img/logo.png">
+    <meta property="og:description" content="Programa para personas con dificultades de habla.">
+    <meta name="description" content="Programa para personas con dificultades de habla.">
+    <meta name="rights" content="Programa para personas con dificultades de habla."/>
+    <meta name="keywords" content="Programa para personas con dificultades de habla."/>
+    <meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+
+    <title>Habla Pro Quo Web</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD31vicQ2FKnyuk52_Zm0hk5mFrUX0XOXg",
+    authDomain: "habla-pro-quo-94809.firebaseapp.com",
+    databaseURL: "https://habla-pro-quo-94809.firebaseio.com",
+    projectId: "habla-pro-quo-94809",
+    storageBucket: "habla-pro-quo-94809.appspot.com",
+    messagingSenderId: "744007858248",
+    appId: "1:744007858248:web:3e84a79ea0e5ee483a807d",
+    measurementId: "G-YV7XZEQ4XD"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+</head>
+<style>
+
+</style>
+
+<script>
+var idioma = "en_GB"
+        var URLdomain = window.location.host;
+
+function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+
+    if (URLdomain==="") { 
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje )
+        app.Vibrate( "0,100,30,100,50,300" );
+        } else {
+            let utterance = new SpeechSynthesisUtterance(mensaje)
+            utterance.lang = idioma
+            speechSynthesis.speak(utterance)
+            }
+        }
+        
+    
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        }
+        
+    function info() {open("ingles-info.html")};
+</script>
+
+<body onload="">
+    <center>
+    <div class="cajon">
+<center>
+    <textarea placeholder="Write your message here..." id="mensaje" rows="7" cols="50"></textarea>
+
+<button class="button naranja" onclick="hablar()">TALK</button>
+<button class="button rojo" onclick="borrar()">DELETE</button>
+<br>
+</center>
+
+<br><br>
+
+<texto><i><center>Pictograms</center></i></texto><br>
+
+<table onclick="imagen1()">
+    <tr>
+    <th><img src="Img/img1.png" alt="Imagen" width="40" height="40"></th>
+    <td>Yes</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen2()">
+    <tr>
+    <th><img src="Img/img2.png" alt="Imagen" width="40" height="40"></th>
+    <td>No</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen3()">
+    <tr>
+    <th><img src="Img/img3.png" alt="Imagen" width="40" height="40"></th>
+    <td>Good Morning</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen4()">
+    <tr>
+    <th><img src="Img/img4.png" alt="Imagen" width="40" height="40"></th>
+    <td>Good afternoon</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img5.png" alt="Imagen" width="40" height="40"></th>
+    <td>Goodnight</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen5()">
+    <tr>
+    <th><img src="Img/img6.png" alt="Imagen" width="40" height="40"></th>
+    <td>Help</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen6()">
+    <tr>
+    <th><img src="Img/img7.png" alt="Imagen" width="40" height="40"></th>
+    <td>I'm going to have a bath</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen7()">
+    <tr>
+    <th><img src="Img/img8.png" alt="Imagen" width="40" height="40"></th>
+    <td>Do you have a charger?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen8()">
+    <tr>
+    <th><img src="Img/img9.png" alt="Imagen" width="40" height="40"></th>
+    <td>What is your name?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen9()">
+    <tr>
+    <th><img src="Img/img11.png" alt="Imagen" width="40" height="40"></th>
+    <td>How much is it?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen10()">
+    <tr>
+    <th><img src="Img/img12.png" alt="Imagen" width="40" height="40"></th>
+    <td>Where?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen11()">
+    <tr>
+    <th><img src="Img/img13.png" alt="Imagen" width="40" height="40"></th>
+    <td>Where is the bathroom?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen12()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>I'm going to sleep</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen13()">
+    <tr>
+    <th><img src="Img/img16.png" alt="Imagen" width="40" height="40"></th>
+    <td>I'm hungry</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen14()">
+    <tr>
+    <th><img src="Img/img17.png" alt="Imagen" width="40" height="40"></th>
+    <td>Please</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen15()">
+    <tr>
+    <th><img src="Img/img18.png" alt="Imagen" width="40" height="40"></th>
+    <td>What?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen16()">
+    <tr>
+    <th><img src="Img/img19.png" alt="Imagen" width="40" height="40"></th>
+    <td>Your</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen17()">
+    <tr>
+    <th><img src="Img/img21.png" alt="Imagen" width="40" height="40"></th>
+    <td>I am happy</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen18()">
+    <tr>
+    <th><img src="Img/img22.png" alt="Imagen" width="40" height="40"></th>
+    <td>I'm hot</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen19()">
+    <tr>
+    <th><img src="Img/img23.png" alt="Imagen" width="40" height="40"></th>
+    <td>I am angry</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen20()">
+    <tr>
+    <th><img src="Img/img24.png" alt="Imagen" width="40" height="40"></th>
+    <td>It's raining</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen21()">
+    <tr>
+    <th><img src="Img/img26.png" alt="Imagen" width="40" height="40"></th>
+    <td>Is cloudy</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen22()">
+    <tr>
+    <th><img src="Img/img27.png" alt="Imagen" width="40" height="40"></th>
+    <td>Windy</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen23()">
+    <tr>
+    <th><img src="Img/img28.png" alt="Imagen" width="40" height="40"></th>
+    <td>It's sunny</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen24()">
+    <tr>
+    <th><img src="Img/img29.png" alt="Imagen" width="40" height="40"></th>
+    <td>What time is it?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>Goodnight</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen26()">
+    <tr>
+    <th><img src="Img/img10.png" alt="Imagen" width="40" height="40"></th>
+    <td>Will you cut me a little?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen27()">
+    <tr>
+    <th><img src="Img/img15.png" alt="Imagen" width="40" height="40"></th>
+    <td>I feel bad</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen28()">
+    <tr>
+    <th><img src="Img/img20.png" alt="Imagen" width="40" height="40"></th>
+    <td>I'm cold</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen29()">
+    <tr>
+    <th><img src="Img/img25.png" alt="Imagen" width="40" height="40"></th>
+    <td>It's snowing</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen30()">
+    <tr>
+    <th><img src="Img/img30.png" alt="Imagen" width="40" height="40"></th>
+    <td>I can play?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen31()">
+    <tr>
+    <th><img src="Img/img31.png" alt="Imagen" width="40" height="40"></th>
+    <td>Hi</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen32()">
+    <tr>
+    <th><img src="Img/img32.png" alt="Imagen" width="40" height="40"></th>
+    <td>My stomach hurts</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen33()">
+    <tr>
+    <th><img src="Img/img33.png" alt="Imagen" width="40" height="40"></th>
+    <td>I have a headache</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen34()">
+    <tr>
+    <th><img src="Img/img34.png" alt="Imagen" width="40" height="40"></th>
+    <td>My back hurts</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen35()">
+    <tr>
+    <th><img src="Img/img35.png" alt="Imagen" width="40" height="40"></th>
+    <td>My throat hurts</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen36()">
+    <tr>
+    <th><img src="Img/img36.png" alt="Imagen" width="40" height="40"></th>
+    <td>My chest hurts</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen37()">
+    <tr>
+    <th><img src="Img/img37.png" alt="Imagen" width="40" height="40"></th>
+    <td>My knee hurts</td>
+    </tr>
+</table>
+
+<table onclick="imagen39()">
+    <tr>
+    <th><img src="Img/img39.png" alt="Imagen" width="40" height="40"></th>
+    <td>Please keep your distance</td>
+    </tr>
+</table>
+
+<script src='ingles.js'></script>
+
+
+<div id="info">
+<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168108945-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168108945-1');
+</script>
+
+<body onload="cargar()">
+</html>
