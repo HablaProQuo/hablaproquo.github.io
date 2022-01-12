@@ -1,0 +1,423 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+  <script>
+  var permisos = ""
+  </script>
+</head>
+<style>
+
+</style>
+
+<script>
+var idioma = "de_DE"
+var URLdomain = window.location.host;
+
+function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+
+    if (URLdomain==="") { 
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje )
+        app.Vibrate( "0,100,30,100,50,300" );
+        } else {
+            let utterance = new SpeechSynthesisUtterance(mensaje)
+            utterance.lang = idioma
+            speechSynthesis.speak(utterance)
+            }
+        }
+        
+    
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        app.Vibrate( "0,100,30,100,50,300" );
+        }
+        
+    function info() {open("aleman-info.html")};
+    function prediseño() {
+        name = app.GetName();
+        
+        if (name==="DroidScript") {
+            open("/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/Hablaproquo/aleman.html");
+            } else {
+                open("/sdcard/Android/data/com.hablaproquo/files/Hablaproquo/aleman.html");
+                }};
+</script>
+
+        <script>
+        function personal() {
+            var name = app.GetAppName();
+            if (name==="") {
+                } else {
+                var todo='<button class="button naranja" onclick="prediseño()">Persönlich</button>'
+                document.getElementById("personal").innerHTML = todo;
+                    }
+            }
+        </script>
+
+<body>
+
+<div class="caja">
+<center>
+    <textarea placeholder="Schreibe deine Nachricht hier..." id="mensaje" rows="7" cols="50"></textarea>
+
+<button class="button naranja" onclick="hablar()">SICH UNTERHALTEN</button>
+<button class="button rojo" onclick="borrar()">LÖSCHEN</button>
+<br>
+        <div id="personal">
+</center>
+
+<br><br>
+
+<texto><i><center>Piktogramme</center></i></texto><br>
+
+<table onclick="imagen1()">
+    <tr>
+    <th><img src="Img/img1.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ja</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen2()">
+    <tr>
+    <th><img src="Img/img2.png" alt="Imagen" width="40" height="40"></th>
+    <td>Nein</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen3()">
+    <tr>
+    <th><img src="Img/img3.png" alt="Imagen" width="40" height="40"></th>
+    <td>Guten Morgen</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen4()">
+    <tr>
+    <th><img src="Img/img4.png" alt="Imagen" width="40" height="40"></th>
+    <td>Guten Tag</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img5.png" alt="Imagen" width="40" height="40"></th>
+    <td>Gute Nacht</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen5()">
+    <tr>
+    <th><img src="Img/img6.png" alt="Imagen" width="40" height="40"></th>
+    <td>Hilfe</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen6()">
+    <tr>
+    <th><img src="Img/img7.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich werde ein Bad nehmen</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen7()">
+    <tr>
+    <th><img src="Img/img8.png" alt="Imagen" width="40" height="40"></th>
+    <td>Hast du ein Ladegerät?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen8()">
+    <tr>
+    <th><img src="Img/img9.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wie heißen Sie?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen9()">
+    <tr>
+    <th><img src="Img/img11.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wie viel kostet das?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen10()">
+    <tr>
+    <th><img src="Img/img12.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wo?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen11()">
+    <tr>
+    <th><img src="Img/img13.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wo ist die Toilette?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen12()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>ich gehe schlafen</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen13()">
+    <tr>
+    <th><img src="Img/img16.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich bin hungrig</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen14()">
+    <tr>
+    <th><img src="Img/img17.png" alt="Imagen" width="40" height="40"></th>
+    <td>Bitte</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen15()">
+    <tr>
+    <th><img src="Img/img18.png" alt="Imagen" width="40" height="40"></th>
+    <td>Was?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen16()">
+    <tr>
+    <th><img src="Img/img19.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ihre</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen17()">
+    <tr>
+    <th><img src="Img/img21.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich bin fröhlich</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen18()">
+    <tr>
+    <th><img src="Img/img22.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich bin heiß</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen19()">
+    <tr>
+    <th><img src="Img/img23.png" alt="Imagen" width="40" height="40"></th>
+    <td>ich bin wütend</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen20()">
+    <tr>
+    <th><img src="Img/img24.png" alt="Imagen" width="40" height="40"></th>
+    <td>Es regnet</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen21()">
+    <tr>
+    <th><img src="Img/img26.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ist bewölkt</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen22()">
+    <tr>
+    <th><img src="Img/img27.png" alt="Imagen" width="40" height="40"></th>
+    <td>Windig</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen23()">
+    <tr>
+    <th><img src="Img/img28.png" alt="Imagen" width="40" height="40"></th>
+    <td>Es ist sonnig</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen24()">
+    <tr>
+    <th><img src="Img/img29.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wie spät ist es?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen25()">
+    <tr>
+    <th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th>
+    <td>Gute Nacht</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen26()">
+    <tr>
+    <th><img src="Img/img10.png" alt="Imagen" width="40" height="40"></th>
+    <td>Wirst du mich ein wenig schneiden?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen27()">
+    <tr>
+    <th><img src="Img/img15.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich fühle mich schlecht</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen28()">
+    <tr>
+    <th><img src="Img/img20.png" alt="Imagen" width="40" height="40"></th>
+    <td>es ist mir kalt</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen29()">
+    <tr>
+    <th><img src="Img/img25.png" alt="Imagen" width="40" height="40"></th>
+    <td>Es schneit</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen30()">
+    <tr>
+    <th><img src="Img/img30.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich kann spielen?</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen31()">
+    <tr>
+    <th><img src="Img/img31.png" alt="Imagen" width="40" height="40"></th>
+    <td>Hallo</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen32()">
+    <tr>
+    <th><img src="Img/img32.png" alt="Imagen" width="40" height="40"></th>
+    <td>Mein Bauch tut weh</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen33()">
+    <tr>
+    <th><img src="Img/img33.png" alt="Imagen" width="40" height="40"></th>
+    <td>Ich habe Kopfschmerzen</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen34()">
+    <tr>
+    <th><img src="Img/img34.png" alt="Imagen" width="40" height="40"></th>
+    <td>Mein Rücken schmerzt</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen35()">
+    <tr>
+    <th><img src="Img/img35.png" alt="Imagen" width="40" height="40"></th>
+    <td>Mein Hals tut weh</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen36()">
+    <tr>
+    <th><img src="Img/img36.png" alt="Imagen" width="40" height="40"></th>
+    <td>Meine Brust schmerzt</td>
+    </tr>
+</table>
+
+
+<table onclick="imagen37()">
+    <tr>
+    <th><img src="Img/img37.png" alt="Imagen" width="40" height="40"></th>
+    <td>Mein Knie tut weh</td>
+    </tr>
+</table>
+
+<table onclick="imagen39()">
+    <tr>
+    <th><img src="Img/img39.png" alt="Imagen" width="40" height="40"></th>
+    <td>Halten Sie bitte Abstand</td>
+    </tr>
+</table>
+
+<script src='aleman.js'></script>
+
+
+<div id="info">
+<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
+</div>
+</div>
+
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
+
+		<td><div id="estilo"></td>
+
+
+<body onload="personal(),estilo()"></html>
