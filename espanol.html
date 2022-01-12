@@ -1,18 +1,30 @@
 <html><head>
-  <meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
   <script>
   var permisos = ""
   </script>
-  <script src='file:///android_asset/app.js'></script>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<style>
 
-</style>
-
+<style>body {background: #f68704;}</style>
 <script>
 var idioma = "es_ES"
-        var URLdomain = window.location.host;
+var URLdomain = window.location.host;
 
 function hablar() {
         var mensaje = document.getElementById('mensaje').value;
@@ -47,15 +59,27 @@ function hablar() {
                 }};
 </script>
 
-<body onload="">
- 
+        <script>
+        function personal() {
+            var name = app.GetAppName();
+            if (name==="") {
+                } else {
+                var todo='<button class="button naranja" onclick="prediseño()">Personales</button>'
+                document.getElementById("personal").innerHTML = todo;
+                    }
+            }
+        </script>
+
+<body>
+
+<div class="caja">
 <center>
     <textarea placeholder="Escribe el mensaje aquí..." id="mensaje" rows="7" cols="50"></textarea>
 
 <button class="button naranja" onclick="hablar()">HABLAR</button>
 <button class="button rojo" onclick="borrar()">BORRAR</button>
 <br>
-<button class="button naranja" onclick="prediseño()">Personales</button>
+        <div id="personal">
 </center>
 
 <br><br>
@@ -376,8 +400,21 @@ function hablar() {
 
 
 <div id="info">
-<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/
+<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
 </div>
 
-<body onload="">
-</html>
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
+
+		<td><div id="estilo"></td>
+
+
+<body onload="personal(),estilo()"></html>

@@ -3,9 +3,11 @@ body {
     }
 
 img {
-    border-radius:15px;
+    border-radius:7px;
     float: left;
-    border: 10px solid #EC8000;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
     }
 
 td {
@@ -13,23 +15,27 @@ td {
     text-align:right;
     }
 
-.cajon {
-  width: 390px;
-  border-radius: 1px;
-  overflow: hidden;
-  padding: 7px 55px 33px 55px;
-}
 
 table {
     margin-bottom: 10%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
     border-radius:15px;
     width: 100%;
-    background: #EC8000;
     border-collapse: collapse;
     float: left;
     }
     
+table:active {
+    margin-bottom: 10%;
+    background: linear-gradient(145deg, #fd8900, #d47300);
+    box-shadow: 20px 20px 60px #c96d00, -20px -20px 60px #ff9300;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+
+
 dato1 {
 	float: right;
 
@@ -43,7 +49,7 @@ textarea {
     background-color: white;
     border-radius: 5px;
     padding: 1% 1% 1% 2%;
-    font-size: 1.5em;
+    font-size: 1em;
     color: black;
     width: 90%;
     height: 30%;
@@ -65,8 +71,8 @@ texto {
     text-align:center;
     font-size: 160%;
     }
-    
-.button {
+     
+.inicio {
     border-radius: 10px;
     color: white;
     padding: 3% 5%;
@@ -79,28 +85,32 @@ texto {
     transition-duration: 0.4s;
     cursor: pointer;
 }
+ 
+.button {
+    border-radius: 10px;
+    color: white;
+    padding: 3% 5%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
 
 .rojo {
-  background-color: #FF2A00; 
-  color: white; 
-  border: 2px solid black;
-}
+    background: linear-gradient(145deg, #ff2d00, #e62600);
+    }
 
 .rojo:active {
-  background-color: white;
-  color: black;
-}
+    background: linear-gradient(145deg, #e62600, #ff2d00);
+    }
 
 .naranja {
-  background-color: #FF9300; 
-  color: white; 
-  border: 2px solid black;
-}
+    background: linear-gradient(145deg, #ff9004, #dd7a04);
+    }
 
 .naranja:active {
-  background-color: white;
-  color: black;
-}
+    background: linear-gradient(145deg, #dd7a04, #ff9004);
+    }
 
 ::placeholder {
   color: black;
@@ -121,20 +131,20 @@ texto2 {
     bottom: 1%;
     }
     
-caja {
-    color: black;
-    width: 90%;
-    height: 40%;
-    font-size:24px
-
-    }
-
 textocaja {
 margin-right: 50;
 margin-top: 50;
 margin-left: 12;
 }
 
+.caja {
+    margin: 0 auto;
+    color: black;
+    width: 40%;
+    height: 40%;
+    font-size:24px
+    }
+    
 #caja {
   background-color: orange;
     border-radius: 3%;
@@ -166,7 +176,7 @@ derecha {
     text-align: right;
     z-index:9999999;
     bottom: 0;
-    right: 1%;
+    right: 1%;    
     }
     
 #redes {
