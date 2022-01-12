@@ -43,6 +43,8 @@
 var idioma = "es_ES"
     
     function hablar() {
+var URLdomain = window.location.host;
+alert(URLdomain);
         var mensaje = document.getElementById('mensaje').value;
         let utterance = new SpeechSynthesisUtterance(mensaje)
         utterance.lang = idioma
