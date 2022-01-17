@@ -11,3 +11,5 @@ Un servicio para las personas con dificultades de habla.
 Por el momento la app esta en español, ingles, alemán, japonés y chino.
 
 Este proyecto es compatible con dispositivos moviles, tablets, Wear OS y SmartWatch.
+
+# Actualizacion
