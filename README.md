@@ -1,3 +1,5 @@
+# Información
+
 La app Habla Pro Quo es desarrollada por Ángel Alonso, alumno de 2º de ciclo medio de Sistemas Microinformáticos y Redes del I.E.S Lomo de La Herradura de Telde (Gran Canaria).
 
 ¿Que es Pro Quo?
@@ -12,4 +14,13 @@ Por el momento la app esta en español, ingles, alemán, japonés y chino.
 
 Este proyecto es compatible con dispositivos moviles, tablets, Wear OS y SmartWatch.
 
-# Actualizacion
+# Actualización
+Se añadieron los siguintes idiomas
+
+🇪🇸 Español
+🇬🇧 Ingles
+🇩🇪 Alemán
+🇯🇵 Japonés
+🇨🇳 Chino
+🇵🇹 Portugués
+🇫🇷 Francés
