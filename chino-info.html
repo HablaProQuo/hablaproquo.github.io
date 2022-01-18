@@ -1,0 +1,148 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+
+<script>
+    var mensaje="您现在可以从此链接下载免费的应用程序 Habla Pro Quo https://play.google.com/store/apps/details?id=com.hablaproquo\n\n它由什么组成？\n对沟通困难的人提供少量支持.\n\n它不兼容吗？\n您可以从此链接获取在线版本 https://hablaproquo.github.io/"
+    function whatsapp() {
+        app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+        }
+    
+    function facebook() {
+        app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo");
+        }
+    
+    function twitter() {
+        app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+        }
+        
+    function qr() {
+	isChrome = app.IsChrome();
+    dlgDemo = app.CreateDialog( "Qr" );
+    dlgDemo.SetBackColor( "#bb000000" );
+    layDemo = app.CreateLayout( "linear", "vertical,fillxy" );
+    layDemo.SetPadding( 0.03, 0.015, 0.03, 0.015 );
+
+    webDemo = app.CreateWebView( isChrome?0.5:0.95, 0.80, "IgnoreErrors" );
+    layDemo.AddChild( webDemo );
+
+    dlgDemo.AddLayout( layDemo );
+    dlgDemo.Show();
+
+    webDemo.LoadUrl( "qr.html" );
+        }
+</script>
+
+	<style type="text/css" media="screen">
+	titulo1 {
+	    float: center;
+	    color: #333;
+	    }
+	
+	dato1 {
+	    float: right;
+	    font-size: 130%
+	    }
+	    
+    dato2 {
+        float: left;
+        }
+
+	.titulo {
+		font-family: sans-serif;
+		text-align: center;
+		font-size: x-large;
+		font-weight: bolder;
+		margin-top: 1em;
+		}
+	
+	caja {
+	    border-radius: 50px;
+	    background: linear-gradient(145deg, #fd8900, #d47300);
+	    box-shadow:  20px 20px 60px #c96d00,
+	    -20px -20px 60px #ff9300;
+	    }
+	    
+    tabla {
+        margin-bottom: 10%;
+        box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+        border-radius:15px;
+        border-collapse: collapse;
+        float: right;
+        }
+    
+    p {
+        padding-left: 5%;
+        }
+	    
+	</style>
+</head> 
+
+<body>
+<div class="caja">
+  <td><strong><a class="inicio rojo" href="chino.html">开始</a></strong></td>
+<br><br>
+
+
+<tabla>
+	<div class="titulo">
+		附加信息
+	</div>
+	
+	<div class="texto">
+	    <p>这个程序是由IES Lomo de la Herradura的学生ÁngelAlonsoRamírez设计的。该应用程序的设计旨在使有言语障碍的人可以交流.</p>
+	</div>
+</tabla>
+
+
+<tabla>
+	<div class="titulo">
+		个人象形图
+	</div>
+	
+	<div class="texto">
+	    <p>标题中只能有一个字. 当创建一个与其他名称相同名称的新象形图时，该象形图将消失.</p>
+	</div>
+</tabla>
+
+<br>
+
+<table id="info">
+    <td><texto2></texto2><br></td>
+    <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height 30px;"><br></td>
+    <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/qr.png" onclick="qr()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+</table>
+</div>
+
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
+
+		<td><div id="estilo"></td>
+
+
+<body onload="estilo()"></html>
