@@ -1,0 +1,124 @@
+<html><head>
+  <meta charset="UTF-8">
+  <script>
+  var permisos = ""
+  </script>
+    <link rel="stylesheet" type="text/css" href="estilo-android.css">
+  <script src='file:///android_asset/app.js'></script>
+</head>
+<style>
+body {
+    background: #f68704;
+    }
+
+p {
+    float: left;
+    color: white;
+    }
+
+textarea {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1% 1% 1% 2%;
+    font-size: 1.5em;
+    color: black;
+    width: 90%;
+    height: 30%;
+    }
+    
+
+#espacio {
+    margin-top:	5%;
+    }
+
+.button {
+    border-radius: 10px;
+    color: white;
+    padding: 3% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.rojo {
+  background-color: #FF2A00; 
+  color: white; 
+  border: 2px solid black;
+}
+
+.rojo:active {
+  background-color: white;
+  color: black;
+}
+
+.naranja {
+  background-color: #FF9300; 
+  color: white; 
+  border: 2px solid black;
+}
+
+.naranja:active {
+  background-color: white;
+  color: black;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+</style>
+		<script>
+		function device() {
+		    var x = app.GetLanguage();
+		    var todo=x
+		      document.getElementById("device").innerHTML = todo;
+}
+		    
+		</script>
+		
+<script>
+    var x = app.GetCountryCode();
+    var z =app.GetLanguageCode()
+	var idioma = z + "_" + x 
+
+    function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+                    
+                var velocidad = 0.8, speed = 0.9;
+                var paquete = "com.google.android.tts";
+                app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+                
+                app.ShowPopup( mensaje )
+                app.Vibrate( "0,100,30,100,50,300" );
+        
+    }
+    
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        app.Vibrate( "0,100,30,100,50,300" );
+        }
+         
+    function info() {open("espanol-info.html")};
+</script>
+<div class="caja">
+
+<div id="espacio"></div>
+
+<center>
+
+<textarea placeholder="....." id="mensaje" rows="7" cols="50"></textarea>
+<br>
+<button class="button naranja" onclick="hablar()">🗣</button>
+<button class="button rojo" onclick="borrar()">🚫</button>
+<br><br>
+<img src="Img/logo.png" width="250" height="250" style="border-radius:50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></center>
+</div>
+
+<body onload="device()">
+</html>

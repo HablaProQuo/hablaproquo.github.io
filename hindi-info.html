@@ -1,0 +1,176 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ángel Alonso">
+	<meta property="og:image" content="Img/logo.png">
+	<meta property="og:description" content="Programa para personas con dificultades de habla.">
+	<meta name="description" content="Programa para personas con dificultades de habla.">
+	<meta name="rights" content="Programa para personas con dificultades de habla."/>
+	<meta name="keywords" content="Programa para personas con dificultades de habla."/>
+	<meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+
+<script>
+var idioma = "hindi"
+
+var a1 = "शुरू"
+var m1 = "अब आप इस लिंक https://play.google.com/store/apps/details?id=com.hablaproquo से ऐप को मुफ्त में डाउनलोड कर सकते हैं, हबला प्रो क्वो"
+var m2 = "इसमें क्या शामिल है?"
+var m3 = "संचार कठिनाइयों वाले लोगों को थोड़ा सा समर्थन दें।"
+var m4 = "समर्थित नहीं?"
+var m5 = "आप इस लिंक https://hablaproquo.github.io से एक ऑनलाइन संस्करण प्राप्त कर सकते हैं"
+var t1 = "नीति का प्रयोग करें"
+var t2 = "व्यक्तिगत चित्रलेख"
+var t3 = "अतिरिक्त जानकारी"
+
+var p1 = "यह एप्लिकेशन उपयोगकर्ताओं की सहमति के बिना किसी भी व्यक्तिगत जानकारी को प्रसारित नहीं करता है। यह एप्लिकेशन जिन सेवाओं के साथ काम करता है, वे व्यक्तिगत जानकारी का उपयोग या खुलासा नहीं करती हैं।"
+var p2 = "शीर्षक में केवल एक शब्द जा सकता है। जब एक नया चित्रलेख उसी नाम से बनाया जाता है, जिस नाम से दूसरा बनाया जाता है, तो वह गायब हो जाएगा।"
+var p3 = "यह ऐप IES Lomo de la Herradura के एक छात्र ngel Alonso Ramírez द्वारा डिज़ाइन किया गया है। ऐप को डिज़ाइन किया गया है ताकि बोलने में कठिनाई वाले लोग संवाद कर सकें।"
+
+	function inicio() {
+		var boton = '<td><strong><a class="inicio rojo" href="' + idioma + '.html">' + a1 + '</a></strong></td>'
+
+    document.getElementById("boton").innerHTML = boton;
+    document.getElementById("t1").innerHTML = t1;
+    document.getElementById("t2").innerHTML = t2;
+    document.getElementById("t3").innerHTML = t3;
+    document.getElementById("p1").innerHTML = "<p>" + p1 + "</p>";
+    document.getElementById("p2").innerHTML = "<p>" + p2 + "</p>";
+    document.getElementById("p3").innerHTML = "<p>" + p3 + "</p>";
+	}
+
+
+    var mensaje= m1 + "\n\n" + m2 + "\n" + m3 + "\n\n" + m4 + "\n" + m5
+    function whatsapp() {
+        app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+        }
+    
+    function facebook() {
+        app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.hablaproquo");
+        }
+    
+    function twitter() {
+        app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+        }
+        
+    function qr() {
+	isChrome = app.IsChrome();
+    dlgDemo = app.CreateDialog( "Qr" );
+    dlgDemo.SetBackColor( "#bb000000" );
+    layDemo = app.CreateLayout( "linear", "vertical,fillxy" );
+    layDemo.SetPadding( 0.03, 0.015, 0.03, 0.015 );
+
+    webDemo = app.CreateWebView( isChrome?0.5:0.95, 0.80, "IgnoreErrors" );
+    layDemo.AddChild( webDemo );
+
+    dlgDemo.AddLayout( layDemo );
+    dlgDemo.Show();
+
+    webDemo.LoadUrl( "qr.html" );
+        }
+</script>
+
+	<style type="text/css" media="screen">
+	titulo1 {
+	    color: #333;
+	    }
+	
+	dato1 {
+	    float: right;
+	    font-size: 130%
+	    }
+	    
+    dato2 {
+        float: left;
+        }
+
+	.titulo {
+		font-family: sans-serif;
+		text-align: center;
+		font-size: x-large;
+		font-weight: bolder;
+		margin-top: 1em;
+		}
+	    
+    tabla {
+        margin-bottom: 10%;
+        box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+        border-radius:15px;
+        border-collapse: collapse;
+        float: right;
+        }
+    
+    p {
+        padding-left: 5%;
+        }
+	    
+	</style>
+</head> 
+
+<body>
+<div class="caja">
+        <div id="boton"></div>
+<br><br>
+<tabla>
+    <div class="titulo">
+        <div id="t1"></div>
+    </div>
+    
+    <div class="texto">
+        <div id="p1"></div>
+    </div>
+</tabla>
+
+
+<tabla>
+    <div class="titulo">
+        <div id="t2"></div>
+	</div>
+	
+	<div class="texto">
+        <div id="p2"></div>
+	</div>
+</tabla>
+
+<tabla>
+    <div class="titulo">
+        <div id="t3"></div>
+	</div>
+	
+	<div class="texto">
+        <div id="p3"></div>
+	</div>
+</tabla>
+<br>
+
+<table id="info">
+    <td><texto2></texto2><br></td>
+    <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height: 30px;"><br></td>
+    <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+    <td><img src="Img/qr.png" onclick="qr()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
+</table>
+</div>
+
+		<script>
+		function estilo() {
+		    var name = app.GetAppName();
+		    if (name==="") {
+		        } else {
+		        var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+		        document.getElementById("estilo").innerHTML = todo;
+		            }
+		    }
+		</script>
+
+		<td><div id="estilo"></td>
+
+
+<body onload="inicio(),estilo()"></html>
