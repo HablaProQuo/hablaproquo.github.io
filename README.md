@@ -17,10 +17,10 @@ Este proyecto es compatible con dispositivos moviles, tablets, Wear OS y SmartWa
 # Actualización
 Se añadieron los siguintes idiomas
 
-🇪🇸 Español
-🇬🇧 Ingles
-🇩🇪 Alemán
-🇯🇵 Japonés
-🇨🇳 Chino
-🇵🇹 Portugués
-🇫🇷 Francés
+- Español
+- Ingles
+- Alemán
+- Japonés
+- Chino
+- Portugués
+- Francés
