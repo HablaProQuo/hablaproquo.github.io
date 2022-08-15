@@ -24,9 +24,3 @@ Se añadieron los siguintes idiomas
 - Chino
 - Portugués
 - Francés
-- Indonesio
-- Tagalo
-- Hindi
-- Malayo
-- Tailandés
-- Vietnamita
