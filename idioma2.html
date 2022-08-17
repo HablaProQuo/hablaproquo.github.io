@@ -1,0 +1,391 @@
+<html><head>
+  <meta charset="UTF-8">
+  <script src='file:///android_asset/app.js'></script>
+  <script src='app.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script>
+var TRange=null;
+
+function findString (str) {
+ if (parseInt(navigator.appVersion)<4) return;
+ var strFound;
+ if (window.find) {
+
+  strFound=self.find(str);
+  if (!strFound) {
+   strFound=self.find(str,0,1);
+   while (self.find(str,0,1)) continue;
+  }
+ }
+ else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+
+  if (TRange!=null) {
+   TRange.collapse(false);
+   strFound=TRange.findText(str);
+   if (strFound) TRange.select();
+  }
+  if (TRange==null || strFound==0) {
+   TRange=self.document.body.createTextRange();
+   strFound=TRange.findText(str);
+   if (strFound) TRange.select();
+  }
+ }
+ else if (navigator.appName=="Opera") {
+  alert("Esta opcion en Opera no funciona.")
+  return;
+ }
+ if (!strFound) alert("Pictograma no encontrado ")
+ return;
+}
+</script>
+
+  <script>
+  function guardar() {
+      var i 
+      for (i=0;i<document.imagenes.pictograma.length;i++){ 
+          if (document.imagenes.pictograma[i].checked) 
+          break; 
+          }
+
+  document.bgColor = document.imagenes.pictograma[i].value 
+  var imagen = "Img/img" + document.bgColor + ".png"
+  var titulo = document.getElementById('titulo').value;
+  var titulo = titulo.replace(/ /gi,'_');
+  var frase = document.getElementById('frase').value;
+  
+  
+    if (titulo === "") {
+        app.Alert(alerta, "ERROR","", 180 );
+        app.Vibrate( "0,100,30,100,50,300" );
+        } 
+
+    if (frase === "") {
+        app.Alert(alerta, "ERROR","", 180 );
+        app.Vibrate( "0,100,30,100,50,300" );
+        } 
+
+else {    
+    var l ="/"
+var d = new Date();
+var ramdom = Math.floor(Math.random() * 100*5);
+var codigo = d.getDate() + d.getDay() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getTime() * ramdom
+var pkg = app.GetPackageName();
+
+var muestra2= '<script src="file:///sdcard/Android/data/' + pkg + '/files/Hablaproquo/IN/' + titulo + '.js"><' + l + 'script>'
+var muestra1 = '<div id="' + titulo + '">'
+
+
+  var carpeta = "/sdcard/Hablaproquo"
+
+  app.MakeFolder( carpeta );
+  app.MakeFolder( carpeta + "/IN");
+  var caja1 = 'document.getElementById("' + titulo + '").innerHTML = "'
+  var caja2= '"'  
+  var fin1 = "<table onclick='" + titulo + "()'><tr><th><img src='" + imagen + "' alt='Imagen' width='40' height='40'></th><td>" + titulo + "</td></tr></table>"
+  var pregunta = 'function ' + titulo + '() {dlgExit = app.CreateDialog( "' + titulo + '" ); layDlg = app.CreateLayout( "Linear", "Horizontal,FillXY" );layDlg.SetPadding( 0.02, 0.02, 0.02, 0.02 );dlgExit.AddLayout( layDlg );var btnYes = app.CreateButton("Reproducir", 0.5, -1, "FontAwesome");btnYes.SetTextSize( 24 );btnYes.SetOnTouch( reproducir' + titulo + ' );layDlg.AddChild( btnYes );var btnNo = app.CreateButton("Eliminar", 0.5, -1, "FontAwesome");btnNo.SetOnTouch( eliminar' + titulo + ' );btnNo.SetTextSize( 24 );layDlg.AddChild( btnNo );dlgExit.Show();}function reproducir' + titulo + '(){dlgExit.Dismiss();app.TextToSpeech( "' + frase + '",1,1,null,"music","en_GB" ); app.Vibrate( "0,100,30,100,50,300" ); app.ShowPopup( "' + frase + '" );}function eliminar' + titulo + '(){ dlgExit.Dismiss(); var pkg = app.GetPackageName(); app.DeleteFile("/sdcard/Hablaproquo/IN/' + titulo + '.js");location.href = "ingles.html"; }'
+
+
+  app.WriteFile( carpeta+ '/ingles.html', '\n', "Append" );
+  app.WriteFile( carpeta+ '/ingles.html', muestra1, "Append" );
+  app.WriteFile( carpeta+ '/ingles.html', '\n', "Append" );
+  app.WriteFile( carpeta+ '/ingles.html', muestra2, "Append" );
+  app.WriteFile( carpeta+ '/ingles.html', '\n', "Append" );
+
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', caja1, "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', fin1, "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', caja2, "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', pregunta, "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/IN/' + titulo + '.js', '\n', "Append" );
+
+      location.href = "ingles.html" 
+  }}
+  
+  function borrar() {
+      var url = "/sdcard/Hablaproquo/"
+      app.DeleteFolder(url + "IN");
+      app.MakeFolder(url + "IN");
+      app.CopyFile("idioma2.html",url+"ingles.html");
+      location.href = "ingles.html" 
+      }
+  </script>
+
+<style>
+body {
+  background-color: #f68704; 
+}
+
+.boton {
+    border-radius: 10%;
+    color: white;
+    padding: 3% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.color1 {
+  background-color: #FF2A00; 
+  color: white; 
+  border: 2px solid black;
+}
+
+.color1:active {
+  background-color: white;
+  color: black;
+}
+
+.color2 {
+  background-color: #0093FF; 
+  color: white; 
+  border: 2px solid black;
+}
+
+.color2:active {
+  background-color: white;
+  color: black;
+}
+
+    
+#pictogramas {
+    border: 2px;
+    padding: 10px;
+    border-radius: 15px;
+    }
+    
+
+.select-sim {
+  width:200px;
+  height:22px;
+  line-height:22px;
+  vertical-align:middle;
+  position:relative;
+  background:white;
+  border:1px solid #ccc;
+  overflow:hidden;
+}
+
+.select-sim:hover::after {
+  content:"";
+}
+
+.select-sim:hover {
+  overflow:visible;
+}
+
+.select-sim:hover .options .option label {
+  display:inline-block;
+}
+
+.select-sim:hover .options {
+  background:white;
+  border-radius: 15px;
+  border:1px solid #ccc;
+  position:absolute;
+  top:-1px;
+  left:-1px;
+  width:125%;
+  height:500%;
+  overflow-y:auto;
+}
+
+.select-sim .options .option input {
+  width:0;
+  height:0;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  float:left;
+  display:inline-block;
+  position: absolute;
+  left: -10000px;
+}
+
+.select-sim .options .option input:checked + label {
+  display:block;
+  width:100%;
+}
+
+.select-sim:hover .options .option input + label {
+    text-decoration: none;
+  display:block;
+}
+
+[type=radio] { 
+  opacity: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+    border: 2px solid #f68704;
+    border-radius: 10px;
+    }
+    
+.flotante {
+    display:scroll;
+    position:fixed;
+    bottom:50%;
+    right:2px;
+    }
+
+#flotante1 {
+    border: 2px;
+    padding: 10px;
+    border-radius: 15px;
+    }
+
+#f1 {
+    display:scroll;
+    position:fixed;
+
+    left:2%;
+    }
+    
+.boton1 {
+    border-radius: 10%;
+    color: white;
+    padding: 2% 0%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+img {
+    border-radius:7px;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    }
+
+td {
+    padding-right: 15px;
+    text-align:right;
+    }
+
+
+table {
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+    
+table:active {
+    margin-bottom: 10%;
+    background: linear-gradient(145deg, #fd8900, #d47300);
+    box-shadow: 20px 20px 60px #c96d00, -20px -20px 60px #ff9300;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+
+</style>
+</head>
+<div id="inicio"></div>
+<a class='flotante' id="flotante" href="#inicio" ><img src='Img/arriba.png' border="0" width="50" height="50"/></a>
+
+
+
+<body>
+<form id="f1" name="f1" action="javascript:void()" 
+onSubmit="if(this.t1.value!=null && this.t1.value!='')
+parent.findString(this.t1.value);return false;"
+>
+<input type="text" id="flotante1"  name="t1" placeholder="Search..." size=20>
+<input type="submit" name=b1 value="Search" class="boton1 color1">
+</form>
+
+<table style="width:100%; text-align:center;">
+<tr>
+<td><texto><i></i></texto></td>
+</tr>
+</table>
+<br><br>
+<br><br><input type="button" OnClick="guardar()" value="Save" class="boton color1">
+<input type="button" OnClick="borrar()" value="Delete all" class="boton color1">
+<br><br>
+<textarea id="titulo" cols="33"  placeholder='Title for the pictogram...'></textarea><br><br>
+
+<textarea id="frase" rows="7" cols="33" placeholder='Text for the pictogram...'></textarea><br><br>
+
+<div class="select-sim" id="pictogramas">
+  <div class="options">
+  <input type="radio" id="pictograma" value="2">Choose a pictogram...<br><br>
+  <form name=imagenes>
+<label><input type="Radio" name="pictograma" value="1"><img src="Img/img1.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="2"><img src="Img/img2.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="3"><img src="Img/img3.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="4"><img src="Img/img4.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="5"><img src="Img/img5.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="6"><img src="Img/img6.png" border="0"  width="50" height="50"/></label>
+    <br>
+<label><input type="Radio" name="pictograma" value="7"><img src="Img/img7.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="8"><img src="Img/img8.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="9"><img src="Img/img9.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="10"><img src="Img/img10.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="11"><img src="Img/img11.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="12"><img src="Img/img12.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="13"><img src="Img/img13.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="14"><img src="Img/img14.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="15"><img src="Img/img15.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="16"><img src="Img/img16.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="17"><img src="Img/img17.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="18"><img src="Img/img18.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="19"><img src="Img/img19.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="20"><img src="Img/img20.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="21"><img src="Img/img21.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="22"><img src="Img/img22.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="23"><img src="Img/img23.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="24"><img src="Img/img24.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="25"><img src="Img/img25.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="26"><img src="Img/img26.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="27"><img src="Img/img27.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="28"><img src="Img/img28.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="29"><img src="Img/img29.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="30"><img src="Img/img30.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="31"><img src="Img/img31.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="32"><img src="Img/img32.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="33"><img src="Img/img33.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="34"><img src="Img/img34.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="35"><img src="Img/img35.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="36"><img src="Img/img36.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="37"><img src="Img/img37.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="38"><img src="Img/img38.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="39"><img src="Img/img39.png" border="0"  width="50" height="50"/></label>
+    </div></div><br>
+
+
+<div id="personales">

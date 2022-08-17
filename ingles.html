@@ -1,0 +1,240 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ángel Alonso">
+    <meta property="og:image" content="Img/logo.png">
+    <meta property="og:description" content="Programa para personas con dificultades de habla.">
+    <meta name="description" content="Programa para personas con dificultades de habla.">
+    <meta name="rights" content="Programa para personas con dificultades de habla."/>
+    <meta name="keywords" content="Programa para personas con dificultades de habla."/>
+    <meta property="og:title" content="Habla Pro Quo">
+    <link href='Img/logo.png' rel='shortcut icon' type='image/png'>
+    
+    <title>Habla Pro Quo</title>
+    
+    <script src='file:///android_asset/app.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="estilo-global.css">
+    
+  <script>
+  var permisos = ""
+  </script>
+</head>
+
+
+<script src='ingles.js'></script>
+<script>
+var idioma = "en_GB"
+var numero = "ingles"
+
+var b1 = "TALK"
+var b2 = "DELETE"
+var p3 = "Personal"
+
+var URLdomain = window.location.host;
+
+function hablar() {
+        var mensaje = document.getElementById('mensaje').value;
+
+    if (URLdomain==="") { 
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje )
+        app.Vibrate( "0,100,30,100,50,300" );
+        } else {
+            let utterance = new SpeechSynthesisUtterance(mensaje)
+            utterance.lang = idioma
+            speechSynthesis.speak(utterance)
+            }
+        }
+        
+    
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        app.Vibrate( "0,100,30,100,50,300" );
+        }
+        
+    function info() {location.href = numero + "-info.html"};
+    function prediseño() {
+        name = app.GetName();
+        
+        if (name==="DroidScript") {
+            open("/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/Hablaproquo/" + numero + ".html");
+            } else {
+                open("/sdcard/Android/data/com.hablaproquo/files/Hablaproquo/" + numero + ".html");
+                }};
+</script>
+
+        <script>
+        function personal() {
+            var name = app.GetAppName();
+            if (name==="") {
+                } else {
+                var todo='<button class="button naranja" onclick="prediseño()">' + p3 + '</button>'
+                document.getElementById("personal").innerHTML = todo
+                    }
+            }
+            
+            
+            
+            
+function pictogramas() {
+    var todo1='<table onclick="imagen1()"><tr><th><img src="Img/img1.png" alt="Imagen" width="40" height="40"></th><td>' + v1 + '</td></tr></table>'
+    var todo2='<table onclick="imagen2()"><tr><th><img src="Img/img2.png" alt="Imagen" width="40" height="40"></th><td>' + v2 + '</td></tr></table>'
+    var todo3='<table onclick="imagen3()"><tr><th><img src="Img/img3.png" alt="Imagen" width="40" height="40"></th><td>' + v3 + '</td></tr></table>'
+    var todo4='<table onclick="imagen4()"><tr><th><img src="Img/img4.png" alt="Imagen" width="40" height="40"></th><td>' + v4 + '</td></tr></table>'
+    var todo5='<table onclick="imagen5()"><tr><th><img src="Img/img6.png" alt="Imagen" width="40" height="40"></th><td>' + v5 + '</td></tr></table>'
+    var todo6='<table onclick="imagen6()"><tr><th><img src="Img/img7.png" alt="Imagen" width="40" height="40"></th><td>' + v6 + '</td></tr></table>'
+    var todo7='<table onclick="imagen7()"><tr><th><img src="Img/img8.png" alt="Imagen" width="40" height="40"></th><td>' + v7 + '</td></tr></table>'
+    var todo8='<table onclick="imagen8()"><tr><th><img src="Img/img9.png" alt="Imagen" width="40" height="40"></th><td>' + v8 + '</td></tr></table>'
+    var todo9='<table onclick="imagen9()"><tr><th><img src="Img/img11.png" alt="Imagen" width="40" height="40"></th><td>' + v9 + '</td></tr></table>'
+    var todo10='<table onclick="imagen10()"><tr><th><img src="Img/img12.png" alt="Imagen" width="40" height="40"></th><td>' + v10 + '</td></tr></table>'
+    var todo11='<table onclick="imagen11()"><tr><th><img src="Img/img13.png" alt="Imagen" width="40" height="40"></th><td>' + v11 + '</td></tr></table>'
+    var todo12='<table onclick="imagen12()"><tr><th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th><td>' + v12 + '</td></tr></table>'
+    var todo13='<table onclick="imagen13()"><tr><th><img src="Img/img16.png" alt="Imagen" width="40" height="40"></th><td>' + v13 + '</td></tr></table>'
+    var todo14='<table onclick="imagen14()"><tr><th><img src="Img/img17.png" alt="Imagen" width="40" height="40"></th><td>' + v14 + '</td></tr></table>'
+    var todo15='<table onclick="imagen15()"><tr><th><img src="Img/img18.png" alt="Imagen" width="40" height="40"></th><td>' + v15 + '</td></tr></table>'
+    var todo16='<table onclick="imagen16()"><tr><th><img src="Img/img19.png" alt="Imagen" width="40" height="40"></th><td>' + v16 + '</td></tr></table>'
+    var todo17='<table onclick="imagen17()"><tr><th><img src="Img/img21.png" alt="Imagen" width="40" height="40"></th><td>' + v17 + '</td></tr></table>'
+    var todo18='<table onclick="imagen18()"><tr><th><img src="Img/img22.png" alt="Imagen" width="40" height="40"></th><td>' + v18 + '</td></tr></table>'
+    var todo19='<table onclick="imagen19()"><tr><th><img src="Img/img23.png" alt="Imagen" width="40" height="40"></th><td>' + v19 + '</td></tr></table>'
+    var todo20='<table onclick="imagen20()"><tr><th><img src="Img/img24.png" alt="Imagen" width="40" height="40"></th><td>' + v20 + '</td></tr></table>'
+    var todo21='<table onclick="imagen21()"><tr><th><img src="Img/img26.png" alt="Imagen" width="40" height="40"></th><td>' + v21 + '</td></tr></table>'
+    var todo22='<table onclick="imagen22()"><tr><th><img src="Img/img27.png" alt="Imagen" width="40" height="40"></th><td>' + v22 + '</td></tr></table>'
+    var todo23='<table onclick="imagen23()"><tr><th><img src="Img/img28.png" alt="Imagen" width="40" height="40"></th><td>' + v23 + '</td></tr></table>'
+    var todo24='<table onclick="imagen24()"><tr><th><img src="Img/img29.png" alt="Imagen" width="40" height="40"></th><td>' + v24 + '</td></tr></table>'
+    var todo25='<table onclick="imagen25()"><tr><th><img src="Img/img14.png" alt="Imagen" width="40" height="40"></th><td>' + v25 + '</td></tr></table>'
+    var todo26='<table onclick="imagen26()"><tr><th><img src="Img/img10.png" alt="Imagen" width="40" height="40"></th><td>' + v26 + '</td></tr></table>'
+    var todo27='<table onclick="imagen27()"><tr><th><img src="Img/img15.png" alt="Imagen" width="40" height="40"></th><td>' + v27 + '</td></tr></table>'
+    var todo28='<table onclick="imagen28()"><tr><th><img src="Img/img20.png" alt="Imagen" width="40" height="40"></th><td>' + v28 + '</td></tr></table>'
+    var todo29='<table onclick="imagen29()"><tr><th><img src="Img/img25.png" alt="Imagen" width="40" height="40"></th><td>' + v29 + '</td></tr></table>'
+    var todo30='<table onclick="imagen30()"><tr><th><img src="Img/img30.png" alt="Imagen" width="40" height="40"></th><td>' + v30 + '</td></tr></table>'
+    var todo31='<table onclick="imagen31()"><tr><th><img src="Img/img31.png" alt="Imagen" width="40" height="40"></th><td>' + v31 + '</td></tr></table>'
+    var todo32='<table onclick="imagen32()"><tr><th><img src="Img/img32.png" alt="Imagen" width="40" height="40"></th><td>' + v32 + '</td></tr></table>'
+    var todo33='<table onclick="imagen33()"><tr><th><img src="Img/img33.png" alt="Imagen" width="40" height="40"></th><td>' + v33 + '</td></tr></table>'
+    var todo34='<table onclick="imagen34()"><tr><th><img src="Img/img34.png" alt="Imagen" width="40" height="40"></th><td>' + v34 + '</td></tr></table>'
+    var todo35='<table onclick="imagen35()"><tr><th><img src="Img/img35.png" alt="Imagen" width="40" height="40"></th><td>' + v35 + '</td></tr></table>'
+    var todo36='<table onclick="imagen36()"><tr><th><img src="Img/img36.png" alt="Imagen" width="40" height="40"></th><td>' + v36 + '</td></tr></table>'
+    var todo37='<table onclick="imagen37()"><tr><th><img src="Img/img37.png" alt="Imagen" width="40" height="40"></th><td>' + v37 + '</td></tr></table>'
+    var todo39='<table onclick="imagen39()"><tr><th><img src="Img/img39.png" alt="Imagen" width="40" height="40"></th><td>' + v39 + '</td></tr></table>'
+
+    document.getElementById("picto1").innerHTML = todo1;
+    document.getElementById("picto2").innerHTML = todo2;
+    document.getElementById("picto3").innerHTML = todo3;
+    document.getElementById("picto4").innerHTML = todo4;
+    document.getElementById("picto5").innerHTML = todo5;
+    document.getElementById("picto6").innerHTML = todo6;
+    document.getElementById("picto7").innerHTML = todo7;
+    document.getElementById("picto8").innerHTML = todo8;
+    document.getElementById("picto9").innerHTML = todo9;
+    document.getElementById("picto10").innerHTML = todo10;
+    document.getElementById("picto11").innerHTML = todo11;
+    document.getElementById("picto12").innerHTML = todo12;
+    document.getElementById("picto13").innerHTML = todo13;
+    document.getElementById("picto14").innerHTML = todo14;
+    document.getElementById("picto15").innerHTML = todo15;
+    document.getElementById("picto16").innerHTML = todo16;
+    document.getElementById("picto17").innerHTML = todo17;
+    document.getElementById("picto18").innerHTML = todo18;
+    document.getElementById("picto19").innerHTML = todo19;
+    document.getElementById("picto20").innerHTML = todo20;
+    document.getElementById("picto21").innerHTML = todo21;
+    document.getElementById("picto22").innerHTML = todo22;
+    document.getElementById("picto23").innerHTML = todo23;
+    document.getElementById("picto24").innerHTML = todo24;
+    document.getElementById("picto25").innerHTML = todo25;
+    document.getElementById("picto26").innerHTML = todo26;
+    document.getElementById("picto27").innerHTML = todo27;
+    document.getElementById("picto28").innerHTML = todo28;
+    document.getElementById("picto29").innerHTML = todo29;
+    document.getElementById("picto30").innerHTML = todo30;
+    document.getElementById("picto31").innerHTML = todo31;
+    document.getElementById("picto32").innerHTML = todo32;
+    document.getElementById("picto33").innerHTML = todo33;
+    document.getElementById("picto34").innerHTML = todo34;
+    document.getElementById("picto35").innerHTML = todo35;
+    document.getElementById("picto36").innerHTML = todo36;
+    document.getElementById("picto37").innerHTML = todo37;
+    document.getElementById("picto39").innerHTML = todo39;
+
+    document.getElementById("hablar").innerHTML = b1;
+    document.getElementById("borrar").innerHTML = b2;
+
+    }            
+        </script>
+
+<body>
+
+<div class="caja">
+<center>
+    <textarea placeholder="" id="mensaje" rows="7" cols="50"></textarea>
+
+<button class="button naranja" onclick="hablar()"><div id="hablar"></div></button>
+<button class="button rojo" onclick="borrar()"><div id="borrar"></div></button>
+<br>
+        <div id="personal"></div>
+</center>
+
+<br><br>
+
+        <div id="picto1"></div>
+        <div id="picto2"></div>
+        <div id="picto3"></div>
+        <div id="picto4"></div>
+        <div id="picto5"></div>
+        <div id="picto6"></div>
+        <div id="picto7"></div>
+        <div id="picto8"></div>
+        <div id="picto9"></div>
+        <div id="picto10"></div>
+        <div id="picto11"></div>
+        <div id="picto12"></div>
+        <div id="picto13"></div>
+        <div id="picto14"></div>
+        <div id="picto15"></div>
+        <div id="picto16"></div>
+        <div id="picto17"></div>
+        <div id="picto18"></div>
+        <div id="picto19"></div>
+        <div id="picto20"></div>
+        <div id="picto21"></div>
+        <div id="picto22"></div>
+        <div id="picto23"></div>
+        <div id="picto24"></div>
+        <div id="picto25"></div>
+        <div id="picto26"></div>
+        <div id="picto27"></div>
+        <div id="picto28"></div>
+        <div id="picto29"></div>
+        <div id="picto30"></div>
+        <div id="picto31"></div>
+        <div id="picto32"></div>
+        <div id="picto33"></div>
+        <div id="picto34"></div>
+        <div id="picto35"></div>
+        <div id="picto36"></div>
+        <div id="picto37"></div>
+        <div id="picto39"></div>
+
+
+
+<div id="info">
+<input type="image" src="Img/info.png" OnClick="info()" border="0" name="submit" title="Info" alt="Info button" width="70" height="70"/>
+</div>
+
+        <script>
+        function estilo() {
+            var name = app.GetAppName();
+            if (name==="") {
+                } else {
+                var todo='<link rel="stylesheet" type="text/css" href="estilo-android.css">'
+                document.getElementById("estilo").innerHTML = todo
+                    }
+            }
+        </script>
+
+        <td><div id="estilo"></div></td>
+
+
+<body onload="pictogramas(),personal(),estilo()"></html>
