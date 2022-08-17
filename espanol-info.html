@@ -18,7 +18,36 @@
     
 
 <script>
-    var mensaje="Ya puedes descargar totalmente gratuita la app, Habla Pro Quo desde este enlace https://play.google.com/store/apps/details?id=com.hablaproquo\n\n¿En que consiste?\nDa un pequeño apoyo a personas con dificultad al comunicarse.\n\n¿No es compatible?\nPodrá obtener una versión online desde este enlace https://hablaproquo.github.io/"
+var idioma = "espanol"
+
+var a1 = "Inicio"
+var m1 = "Ya puedes descargar totalmente gratuita la app, Habla Pro Quo desde este enlace https://play.google.com/store/apps/details?id=com.hablaproquo"
+var m2 = "¿En que consiste?"
+var m3 = "Da un pequeño apoyo a personas con dificultad al comunicarse."
+var m4 = "¿No es compatible?"
+var m5 = "Podrá obtener una versión online desde este enlace https://hablaproquo.github.io"
+var t1 = "Politica de uso"
+var t2 = "Pictogramas personales"
+var t3 = "Información adicional"
+
+var p1 = "Esta aplicación no transmite ninguna información personal sin el consentimiento de los usuarios. Los servicios con los que trabaja esta aplicación no utilizan, ni divulgan información personal."
+var p2 = "En el titulo solo puede ir una palabra. Al crear un pictograma nuevo con el mismo nombre a otro creado, este desaparecerá."
+var p3 = "Esta app esta diseñada por Ángel Alonso Ramírez, alumno del IES Lomo de la Herradura. La app está diseñada para que personas con dificultades de habla puedan comunicarse."
+
+	function inicio() {
+		var boton = '<td><strong><a class="inicio rojo" href="' + idioma + '.html">' + a1 + '</a></strong></td>'
+
+    document.getElementById("boton").innerHTML = boton;
+    document.getElementById("t1").innerHTML = t1;
+    document.getElementById("t2").innerHTML = t2;
+    document.getElementById("t3").innerHTML = t3;
+    document.getElementById("p1").innerHTML = "<p>" + p1 + "</p>";
+    document.getElementById("p2").innerHTML = "<p>" + p2 + "</p>";
+    document.getElementById("p3").innerHTML = "<p>" + p3 + "</p>";
+	}
+
+
+    var mensaje= m1 + "\n\n" + m2 + "\n" + m3 + "\n\n" + m4 + "\n" + m5
     function whatsapp() {
         app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
         }
@@ -87,43 +116,42 @@
 
 <body>
 <div class="caja">
-  <td><strong><a class="inicio rojo" href="espanol.html">Inicio</a></strong></td>
+        <div id="boton"></div>
 <br><br>
 <tabla>
     <div class="titulo">
-        Politica de uso
+        <div id="t1"></div>
     </div>
     
     <div class="texto">
-        <p>Esta aplicación no transmite ninguna información personal sin el consentimiento de los usuarios. Los servicios con los que trabaja esta aplicación no utilizan, ni divulgan información personal.</p>
+        <div id="p1"></div>
     </div>
 </tabla>
 
 
 <tabla>
-	<div class="titulo">
-		Pictogramas personales
+    <div class="titulo">
+        <div id="t2"></div>
 	</div>
 	
 	<div class="texto">
-	    <p>En el titulo solo puede ir una palabra.
-	    Al crear un pictograma nuevo con el mismo nombre a otro creado, este desaparecerá.</p>
+        <div id="p2"></div>
 	</div>
 </tabla>
 
 <tabla>
-	<div class="titulo">
-		Información adicional
+    <div class="titulo">
+        <div id="t3"></div>
 	</div>
 	
 	<div class="texto">
-	    <p>Esta app esta diseñada por Ángel Alonso Ramírez, alumno del IES Lomo de la Herradura. La app está diseñada para que personas con dificultades de habla puedan comunicarse.</p>
+        <div id="p3"></div>
 	</div>
 </tabla>
 <br>
 
 <table id="info">
-    <td><texto2>Compartir</texto2><br></td>
+    <td><texto2></texto2><br></td>
     <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
     <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height: 30px;"><br></td>
     <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
@@ -145,4 +173,4 @@
 		<td><div id="estilo"></td>
 
 
-<body onload="estilo()"></html>
+<body onload="inicio(),estilo()"></html>

@@ -18,7 +18,36 @@
     
 
 <script>
-    var mensaje="Sie können die kostenlose App Habla Pro Quo jetzt unter folgendem Link herunterladen: https://play.google.com/store/apps/details?id=com.hablaproquo\n\Woraus besteht es?\nGeben Sie Menschen mit Kommunikationsschwierigkeiten wenig Unterstützung."
+var idioma = "aleman"
+
+var a1 = "Start"
+var m1 = "Sie können die Anwendung Habla Pro Quo jetzt kostenlos von diesem Link herunterladen https://play.google.com/store/apps/details?id=com.hablaproquo"
+var m2 = "Worum geht es?"
+var m3 = "Unterstützen Sie Menschen mit Kommunikationsschwierigkeiten."
+var m4 = "Nicht unterstützt?"
+var m5 = "Eine Online-Version erhalten Sie über diesen Link https://hablaproquo.github.io"
+var t1 = "Nutzungsrichtlinie"
+var t2 = "Persönliche Piktogramme"
+var t3 = "Zusätzliche Informationen"
+
+var p1 = "Diese App überträgt keine persönlichen Informationen ohne die Zustimmung der Benutzer. Die Dienste, mit denen diese App arbeitet, verwenden oder geben keine persönlichen Informationen weiter."
+var p2 = "Sie können nur ein Wort in den Titel eingeben. Wenn Sie ein neues Piktogramm mit demselben Namen wie ein anderes erstellen, verschwindet es."
+var p3 = "Diese Anwendung wurde von Ángel Alonso Ramírez, einem Studenten der IES Lomo de la Herradura, entworfen. Die Anwendung wurde für Menschen mit Sprachschwierigkeiten entwickelt."
+
+	function inicio() {
+		var boton = '<td><strong><a class="inicio rojo" href="' + idioma + '.html">' + a1 + '</a></strong></td>'
+
+    document.getElementById("boton").innerHTML = boton;
+    document.getElementById("t1").innerHTML = t1;
+    document.getElementById("t2").innerHTML = t2;
+    document.getElementById("t3").innerHTML = t3;
+    document.getElementById("p1").innerHTML = "<p>" + p1 + "</p>";
+    document.getElementById("p2").innerHTML = "<p>" + p2 + "</p>";
+    document.getElementById("p3").innerHTML = "<p>" + p3 + "</p>";
+	}
+
+
+    var mensaje= m1 + "\n\n" + m2 + "\n" + m3 + "\n\n" + m4 + "\n" + m5
     function whatsapp() {
         app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
         }
@@ -50,7 +79,6 @@
 
 	<style type="text/css" media="screen">
 	titulo1 {
-	    float: center;
 	    color: #333;
 	    }
 	
@@ -70,13 +98,6 @@
 		font-weight: bolder;
 		margin-top: 1em;
 		}
-	
-	caja {
-	    border-radius: 50px;
-	    background: linear-gradient(145deg, #fd8900, #d47300);
-	    box-shadow:  20px 20px 60px #c96d00,
-	    -20px -20px 60px #ff9300;
-	    }
 	    
     tabla {
         margin-bottom: 10%;
@@ -95,42 +116,42 @@
 
 <body>
 <div class="caja">
-  <td><strong><a class="inicio rojo" href="aleman.html">Zuhause</a></strong></td>
-  <br><br>
+        <div id="boton"></div>
+<br><br>
 <tabla>
     <div class="titulo">
-        Nutzungsbedingungen
+        <div id="t1"></div>
     </div>
     
     <div class="texto">
-        <p>Diese Anwendung übermittelt keine personenbezogenen Daten ohne Zustimmung der Benutzer. Die Dienste, mit denen diese Anwendung arbeitet, verwenden keine personenbezogenen Daten und geben diese nicht weiter.</p>
+        <div id="p1"></div>
     </div>
 </tabla>
 
 
 <tabla>
-	<div class="titulo">
-		Persönliche Piktogramme
+    <div class="titulo">
+        <div id="t2"></div>
 	</div>
 	
 	<div class="texto">
-	    <p>Im Titel darf nur ein Wort vorkommen. Wenn ein neues Piktogramm mit dem gleichen Namen wie ein anderes erstellt wird, verschwindet es.</p>
+        <div id="p2"></div>
 	</div>
 </tabla>
 
 <tabla>
-	<div class="titulo">
-		zusätzliche Information
+    <div class="titulo">
+        <div id="t3"></div>
 	</div>
 	
 	<div class="texto">
-	    <p>Diese App wurde von Ángel Alonso Ramírez, einem Studenten am IES Lomo de la Herradura, entworfen. Die App ist so konzipiert, dass Menschen mit Sprachschwierigkeiten kommunizieren können.</p>
+        <div id="p3"></div>
 	</div>
 </tabla>
 <br>
 
 <table id="info">
-    <td><texto2>Teilen</texto2><br></td>
+    <td><texto2></texto2><br></td>
     <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
     <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height: 30px;"><br></td>
     <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
@@ -152,4 +173,4 @@
 		<td><div id="estilo"></td>
 
 
-<body onload="estilo()"></html>
+<body onload="inicio(),estilo()"></html>

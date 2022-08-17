@@ -83,7 +83,7 @@ var muestra1 = '<div id="' + titulo + '">'
   app.MakeFolder( carpeta + "/AL");
   var caja1 = 'document.getElementById("' + titulo + '").innerHTML = "'
   var caja2= '"'  
-  var fin1 = "<div style='float: left; border: #E17A00 5px solid; margin-left: 1%; padding: 1%;'><img src='" + imagen + "' border='0'  width='80' height='80' OnClick='" + titulo + "();'><br>" + titulo + "</div>"
+  var fin1 = "<table onclick='" + titulo + "()'><tr><th><img src='" + imagen + "' alt='Imagen' width='40' height='40'></th><td>" + titulo + "</td></tr></table>"
   var pregunta = 'function ' + titulo + '() {dlgExit = app.CreateDialog( "' + titulo + '" ); layDlg = app.CreateLayout( "Linear", "Horizontal,FillXY" );layDlg.SetPadding( 0.02, 0.02, 0.02, 0.02 );dlgExit.AddLayout( layDlg );var btnYes = app.CreateButton("Reproducir", 0.5, -1, "FontAwesome");btnYes.SetTextSize( 24 );btnYes.SetOnTouch( reproducir' + titulo + ' );layDlg.AddChild( btnYes );var btnNo = app.CreateButton("Eliminar", 0.5, -1, "FontAwesome");btnNo.SetOnTouch( eliminar' + titulo + ' );btnNo.SetTextSize( 24 );layDlg.AddChild( btnNo );dlgExit.Show();}function reproducir' + titulo + '(){dlgExit.Dismiss();app.TextToSpeech( "' + frase + '",1,1,null,"music","de_DE" ); app.Vibrate( "0,100,30,100,50,300" ); app.ShowPopup( "' + frase + '" );}function eliminar' + titulo + '(){ dlgExit.Dismiss(); var pkg = app.GetPackageName(); app.DeleteFile("/sdcard/Hablaproquo/AL/' + titulo + '.js");location.href = "aleman.html"; }'
 
 
@@ -119,11 +119,6 @@ body {
   background-color: #f68704; 
 }
 
-personales {
-border: #E17A00 5px solid;
-width: 95%;
-    }
-
 .boton {
     border-radius: 10%;
     color: white;
@@ -138,11 +133,6 @@ width: 95%;
     cursor: pointer;
 }
 
-texto {
-    font-family: "Times New Roman", Times, serif;
-    text-align:center;
-    font-size: 160%;
-    }
 
 .color1 {
   background-color: #FF2A00; 
@@ -150,7 +140,7 @@ texto {
   border: 2px solid black;
 }
 
-.color1:hover {
+.color1:active {
   background-color: white;
   color: black;
 }
@@ -161,16 +151,11 @@ texto {
   border: 2px solid black;
 }
 
-.color2:hover {
+.color2:active {
   background-color: white;
   color: black;
 }
 
-#frase {
-    border: 2px;
-    padding: 10px;
-    border-radius: 15px;
-    }
     
 #pictogramas {
     border: 2px;
@@ -178,11 +163,6 @@ texto {
     border-radius: 15px;
     }
     
-#titulo {
-    border: 2px;
-    padding: 10px;
-    border-radius: 15px;
-    }
 
 .select-sim {
   width:200px;
@@ -267,27 +247,13 @@ texto {
     border-radius: 15px;
     }
 
-#x {
-    border: 2px;
-    padding: 10px;
-    border-radius: 15px;
-    }
-
-.x {
-    display:scroll;
-    position:fixed;
-    bottom:90%;
-    right:2px;
-    }
-
-
 #f1 {
     display:scroll;
     position:fixed;
 
     left:2%;
     }
-
+    
 .boton1 {
     border-radius: 10%;
     color: white;
@@ -301,6 +267,39 @@ texto {
     transition-duration: 0.4s;
     cursor: pointer;
 }
+
+img {
+    border-radius:7px;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    }
+
+td {
+    padding-right: 15px;
+    text-align:right;
+    }
+
+
+table {
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+    
+table:active {
+    margin-bottom: 10%;
+    background: linear-gradient(145deg, #fd8900, #d47300);
+    box-shadow: 20px 20px 60px #c96d00, -20px -20px 60px #ff9300;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
 
 </style>
 

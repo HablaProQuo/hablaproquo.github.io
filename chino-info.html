@@ -18,7 +18,35 @@
     
 
 <script>
-    var mensaje="您现在可以从此链接下载免费的应用程序 Habla Pro Quo https://play.google.com/store/apps/details?id=com.hablaproquo\n\n它由什么组成？\n对沟通困难的人提供少量支持.\n\n它不兼容吗？\n您可以从此链接获取在线版本 https://hablaproquo.github.io/"
+var idioma = "chino"
+
+var a1 = "开始"
+var m1 = "您现在可以从此链接免费下载 Habla Pro Quo 应用程序 https://play.google.com/store/apps/details?id=com.hablaproquo"
+var m2 = "它是关于什么的？"
+var m3 = "给有沟通困难的人一些支持。"
+var m4 = "不支持？"
+var m5 = "您可以从此链接 https://hablaproquo.github.io 获得在线版本"
+var t1 = "使用政策"
+var t2 = "个人象形图"
+var t3 = "附加信息"
+
+var p1 = "未经用户同意，此应用不会传输任何个人信息。此应用所使用的服务不会使用或披露个人信息。"
+var p2 = "你只能在标题中输入一个单词。当你创建一个与另一个创建的同名的新象形图时，它会消失。"
+
+	function inicio() {
+		var boton = '<td><strong><a class="inicio rojo" href="' + idioma + '.html">' + a1 + '</a></strong></td>'
+
+    document.getElementById("boton").innerHTML = boton;
+    document.getElementById("t1").innerHTML = t1;
+    document.getElementById("t2").innerHTML = t2;
+    document.getElementById("t3").innerHTML = t3;
+    document.getElementById("p1").innerHTML = "<p>" + p1 + "</p>";
+    document.getElementById("p2").innerHTML = "<p>" + p2 + "</p>";
+    document.getElementById("p3").innerHTML = "<p>" + p3 + "</p>";
+	}
+
+
+    var mensaje= m1 + "\n\n" + m2 + "\n" + m3 + "\n\n" + m4 + "\n" + m5
     function whatsapp() {
         app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
         }
@@ -50,7 +78,6 @@
 
 	<style type="text/css" media="screen">
 	titulo1 {
-	    float: center;
 	    color: #333;
 	    }
 	
@@ -70,13 +97,6 @@
 		font-weight: bolder;
 		margin-top: 1em;
 		}
-	
-	caja {
-	    border-radius: 50px;
-	    background: linear-gradient(145deg, #fd8900, #d47300);
-	    box-shadow:  20px 20px 60px #c96d00,
-	    -20px -20px 60px #ff9300;
-	    }
 	    
     tabla {
         margin-bottom: 10%;
@@ -95,37 +115,44 @@
 
 <body>
 <div class="caja">
-  <td><strong><a class="inicio rojo" href="chino.html">开始</a></strong></td>
+        <div id="boton"></div>
 <br><br>
-
-
 <tabla>
-	<div class="titulo">
-		附加信息
-	</div>
-	
-	<div class="texto">
-	    <p>这个程序是由IES Lomo de la Herradura的学生ÁngelAlonsoRamírez设计的。该应用程序的设计旨在使有言语障碍的人可以交流.</p>
-	</div>
+    <div class="titulo">
+        <div id="t1"></div>
+    </div>
+    
+    <div class="texto">
+        <div id="p1"></div>
+    </div>
 </tabla>
 
 
 <tabla>
-	<div class="titulo">
-		个人象形图
+    <div class="titulo">
+        <div id="t2"></div>
 	</div>
 	
 	<div class="texto">
-	    <p>标题中只能有一个字. 当创建一个与其他名称相同名称的新象形图时，该象形图将消失.</p>
+        <div id="p2"></div>
 	</div>
 </tabla>
 
+<tabla>
+    <div class="titulo">
+        <div id="t3"></div>
+	</div>
+	
+	<div class="texto">
+        <div id="p3"></div>
+	</div>
+</tabla>
 <br>
 
 <table id="info">
-    <td><texto2>分享</texto2><br></td>
+    <td><texto2></texto2><br></td>
     <td><img src="Img/whatsapp.png" onclick="whatsapp()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
-    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height 30px;"><br></td>
+    <td><img src="Img/facebook.png" onclick="facebook()" style="margin: 5% 0%; width:30px; height: 30px;"><br></td>
     <td><img src="Img/twitter.png" onclick="twitter()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
     <td><img src="Img/qr.png" onclick="qr()" style="margin: 5% 0%; width: 30px; height: 30px;"><br></td>
 </table>
@@ -145,4 +172,4 @@
 		<td><div id="estilo"></td>
 
 
-<body onload="estilo()"></html>
+<body onload="inicio(),estilo()"></html>

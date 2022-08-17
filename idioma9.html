@@ -36,7 +36,7 @@ function findString (str) {
   alert("Esta opcion en Opera no funciona.")
   return;
  }
- if (!strFound) alert("Pictograma no encontrado ")
+ if (!strFound) alert("चित्रलेख नहीं मिला ")
  return;
 }
 </script>
@@ -73,44 +73,44 @@ var ramdom = Math.floor(Math.random() * 100*5);
 var codigo = d.getDate() + d.getDay() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getTime() * ramdom
 var pkg = app.GetPackageName();
 
-var muestra2= '<script src="file:///sdcard/Android/data/' + pkg + '/files/Hablaproquo/PT/' + titulo + '.js"><' + l + 'script>'
+var muestra2= '<script src="file:///sdcard/Android/data/' + pkg + '/files/Hablaproquo/HN/' + titulo + '.js"><' + l + 'script>'
 var muestra1 = '<div id="' + titulo + '">'
 
 
   var carpeta = "/sdcard/Hablaproquo"
 
   app.MakeFolder( carpeta );
-  app.MakeFolder( carpeta + "/PT");
+  app.MakeFolder( carpeta + "/HN");
   var caja1 = 'document.getElementById("' + titulo + '").innerHTML = "'
   var caja2= '"'  
   var fin1 = "<table onclick='" + titulo + "()'><tr><th><img src='" + imagen + "' alt='Imagen' width='40' height='40'></th><td>" + titulo + "</td></tr></table>"
-  var pregunta = 'function ' + titulo + '() {dlgExit = app.CreateDialog( "' + titulo + '" ); layDlg = app.CreateLayout( "Linear", "Horizontal,FillXY" );layDlg.SetPadding( 0.02, 0.02, 0.02, 0.02 );dlgExit.AddLayout( layDlg );var btnYes = app.CreateButton("Reproducir", 0.5, -1, "FontAwesome");btnYes.SetTextSize( 24 );btnYes.SetOnTouch( reproducir' + titulo + ' );layDlg.AddChild( btnYes );var btnNo = app.CreateButton("Eliminar", 0.5, -1, "FontAwesome");btnNo.SetOnTouch( eliminar' + titulo + ' );btnNo.SetTextSize( 24 );layDlg.AddChild( btnNo );dlgExit.Show();}function reproducir' + titulo + '(){dlgExit.Dismiss();app.TextToSpeech( "' + frase + '",1,1,null,"music","pt_PT" ); app.Vibrate( "0,100,30,100,50,300" ); app.ShowPopup( "' + frase + '" );}function eliminar' + titulo + '(){ dlgExit.Dismiss(); var pkg = app.GetPackageName(); app.DeleteFile("/sdcard/Hablaproquo/PT/' + titulo + '.js");location.href = "portugues.html"; }'
+  var pregunta = 'function ' + titulo + '() {dlgExit = app.CreateDialog( "' + titulo + '" ); layDlg = app.CreateLayout( "Linear", "Horizontal,FillXY" );layDlg.SetPadding( 0.02, 0.02, 0.02, 0.02 );dlgExit.AddLayout( layDlg );var btnYes = app.CreateButton("Reproducir", 0.5, -1, "FontAwesome");btnYes.SetTextSize( 24 );btnYes.SetOnTouch( reproducir' + titulo + ' );layDlg.AddChild( btnYes );var btnNo = app.CreateButton("Eliminar", 0.5, -1, "FontAwesome");btnNo.SetOnTouch( eliminar' + titulo + ' );btnNo.SetTextSize( 24 );layDlg.AddChild( btnNo );dlgExit.Show();}function reproducir' + titulo + '(){dlgExit.Dismiss();app.TextToSpeech( "' + frase + '",1,1,null,"music","hi_IN" ); app.Vibrate( "0,100,30,100,50,300" ); app.ShowPopup( "' + frase + '" );}function eliminar' + titulo + '(){ dlgExit.Dismiss(); var pkg = app.GetPackageName(); app.DeleteFile("/sdcard/Hablaproquo/HN/' + titulo + '.js");location.href = "hindi.html"; }'
 
 
-  app.WriteFile( carpeta+ '/portugues.html', '\n', "Append" );
-  app.WriteFile( carpeta+ '/portugues.html', muestra1, "Append" );
-  app.WriteFile( carpeta+ '/portugues.html', '\n', "Append" );
-  app.WriteFile( carpeta+ '/portugues.html', muestra2, "Append" );
-  app.WriteFile( carpeta+ '/portugues.html', '\n', "Append" );
+  app.WriteFile( carpeta+ '/hindi.html', '\n', "Append" );
+  app.WriteFile( carpeta+ '/hindi.html', muestra1, "Append" );
+  app.WriteFile( carpeta+ '/hindi.html', '\n', "Append" );
+  app.WriteFile( carpeta+ '/hindi.html', muestra2, "Append" );
+  app.WriteFile( carpeta+ '/hindi.html', '\n', "Append" );
 
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', caja1, "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', fin1, "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', caja2, "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', '\n', "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', '\n', "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', pregunta, "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', '\n', "Append" );
-  app.WriteFile( carpeta+'/PT/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', caja1, "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', fin1, "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', caja2, "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', pregunta, "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', '\n', "Append" );
+  app.WriteFile( carpeta+'/HN/' + titulo + '.js', '\n', "Append" );
 
-      location.href = "portugues.html" 
+      location.href = "hindi.html" 
   }}
   
   function borrar() {
       var url = "/sdcard/Hablaproquo/"
-      app.DeleteFolder(url + "PT");
-      app.MakeFolder(url + "PT");
-      app.CopyFile("idioma6.html",url+"portugues.html");
-      location.href = "portugues.html" 
+      app.DeleteFolder(url + "HN");
+      app.MakeFolder(url + "HN");
+      app.CopyFile("idioma9.html",url+"hindi.html");
+      location.href = "hindi.html" 
       }
   </script>
 
@@ -312,8 +312,8 @@ table:active {
 onSubmit="if(this.t1.value!=null && this.t1.value!='')
 parent.findString(this.t1.value);return false;"
 >
-<input type="text" id="flotante1"  name="t1" placeholder="Procurar por..." size=20>
-<input type="submit" name=b1 value="Procurar por" class="boton1 color1">
+<input type="text" id="flotante1"  name="t1" placeholder="ढूंढें..." size=20>
+<input type="submit" name=b1 value="ढूंढें" class="boton1 color1">
 </form>
 
 <table style="width:100%; text-align:center;">
@@ -322,16 +322,16 @@ parent.findString(this.t1.value);return false;"
 </tr>
 </table>
 <br><br>
-<input type="button" OnClick="guardar()" value="Salve" class="boton color1">
-<input type="button" OnClick="borrar()" value="Excluir tudo" class="boton color1">
+<input type="button" OnClick="guardar()" value="सहेजें" class="boton color1">
+<input type="button" OnClick="borrar()" value="सभी हटा दो" class="boton color1">
 <br><br>
-<textarea id="titulo" cols="33"  placeholder='Título para pictograma...'></textarea><br><br>
+<textarea id="titulo" cols="33"  placeholder='चित्रलेख के लिए शीर्षक...'></textarea><br><br>
 
-<textarea id="frase" rows="7" cols="33" placeholder='Texto para pictograma...'></textarea><br><br>
+<textarea id="frase" rows="7" cols="33" placeholder='चित्रलेख के लिए पाठ...'></textarea><br><br>
 
 <div class="select-sim" id="pictogramas">
   <div class="options">
-  <input type="radio" id="pictograma" value="2">Escolha um pictograma...<br><br>
+  <input type="radio" id="pictograma" value="2">एक चित्रलेख चुनें...<br><br>
   <form name=imagenes>
 <label><input type="Radio" name="pictograma" value="1"><img src="Img/img1.png" border="0"  width="50" height="50"/></label>
 <label><input type="Radio" name="pictograma" value="2"><img src="Img/img2.png" border="0"  width="50" height="50"/></label>
