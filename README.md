@@ -14,7 +14,7 @@ Por el momento la app esta en español, ingles, alemán, japonés y chino.
 
 Este proyecto es compatible con dispositivos moviles, tablets, Wear OS y SmartWatch.
 
-Si desea probar la app puede hacerlo desde este [enlace](https://play.google.com/store/apps/details?id=com.hablaproquo) en caso de que su dispositivo Android no sea compatible, puede usar la version [lite.](https://github.com/HablaProQuo/hablaproquo.github.io/releases)
+Si desea probar la app puede hacerlo desde este [enlace,](https://play.google.com/store/apps/details?id=com.hablaproquo) en caso de que su dispositivo Android no sea compatible, puede usar la versión [lite.](https://github.com/HablaProQuo/hablaproquo.github.io/releases) o puede usar su versión [web.](https://hablaproquo.github.io)
 
 # Actualización
 Se añadieron los siguintes idiomas
