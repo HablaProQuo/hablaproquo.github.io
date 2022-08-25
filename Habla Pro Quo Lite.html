@@ -1,0 +1,132 @@
+<html><head>
+  <meta charset="UTF-8">
+  <script src='file:///android_asset/app.js'></script>
+</head>
+<script>
+// Funciones de inicio
+function cargar() {
+    theme = app.CreateTheme( "Dark" );
+    app.SetTheme( theme );
+    app.SetStatusBarColor( "#2d3134" );
+    app.SetNavBarColor( "#2d3134" );
+    app.EnableBackKey( false );
+    app.PreventScreenLock(true);
+	app.SetOrientation("Portrait");  
+	app.SetVolume("music", "5", "");
+    }
+    
+// Funcion salir
+function OnBack() {
+    var sino = app.CreateYesNoDialog( "¿Desea salir de Habla Pro Quo?" );
+    sino.SetButtonText( "Si","No" );
+    sino.SetOnTouch(function(result){ if(result=="Yes") app.Exit();});
+    sino.Show();
+    }
+
+
+// Funciones y variables de hablar
+    function hablar() {
+        var velocidad = 0.8, speed = 0.9;
+        var paquete = "com.google.android.tts";
+        var mensaje = document.getElementById('mensaje').value;
+        var idioma = document.getElementById('idiomas').value;
+
+        if (idioma==="otro") {
+            var x = app.GetCountryCode();
+            var z = app.GetLanguageCode();
+            var idioma = z + "_" + x 
+            }
+            
+        app.TextToSpeech( mensaje, velocidad, speed, "", "music", idioma, paquete );
+        app.ShowPopup( mensaje );
+        app.Vibrate( "0,100,30,100,50,300" );
+    }
+    
+// Funcion de eliminar
+    function borrar() {
+        document.getElementById("mensaje").value = "";
+        app.Vibrate( "0,100,30,100,50,300" );
+        }
+         
+</script>
+
+<style>
+body {
+    background: #2d3134;
+    }
+
+.caja {
+    margin: 0 auto;
+    color: black;
+    width: 90%;
+    height: 40%;
+    font-size:24px
+    }
+
+textarea {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1% 1% 1% 2%;
+    color: black;
+    width: 90%;
+    height: 30%;
+    }
+    
+#espacio {
+    margin-top:	15%;
+    }
+
+.button, #idiomas{
+    border-radius: 10px;
+    color: white;
+    padding: 2% 12%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #3e4347; 
+    color: white; 
+    border: 2px solid black;
+    }
+
+.gris:active {
+    background-color: #303336;
+    color: black;
+    }
+</style>
+		
+<div class="caja">
+
+<div id="espacio"></div>
+<center>
+
+<textarea placeholder="" id="mensaje" rows="7" cols="50"></textarea>
+<br><br>
+
+<select id="idiomas">
+   <option value="otro">Device</option> 
+   <option value="es_ES">Español</option> 
+   <option value="en_GB">English</option> 
+   <option value="de_DE">Deutsch</option> 
+   <option value="ja_JP">日本</option> 
+   <option value="zh_CN">中国</option> 
+   <option value="pt_PT">Português</option> 
+   <option value="fr_FR">Français</option> 
+   <option value="id_ID">Indonesio</option> 
+   <option value="hi_IN">हिन्दी</option> 
+   <option value="ms_MY">Melayu</option> 
+   <option value="en_PH">Tagalog</option> 
+   <option value="th_TH">ไทย</option> 
+   <option value="vi_VN">Tiếng Việt</option> 
+</select>
+
+<br>
+<button class="button gris" onclick="hablar()">🗣</button>
+<button class="button gris" onclick="borrar()">🚫</button>
+</div>
+
+<body onload="cargar()"></html>
