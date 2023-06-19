@@ -1,0 +1,82 @@
+body {
+    background: #f68704;
+    }
+
+tabla {
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+    border-radius:15px;
+    border-collapse: collapse;
+    float: right;
+    }
+
+table {
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 11px #d17303, -5px -5px 11px #ff9b05;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+    
+table:active {
+    margin-bottom: 10%;
+    background: linear-gradient(145deg, #fd8900, #d47300);
+    box-shadow: 20px 20px 60px #c96d00, -20px -20px 60px #ff9300;
+    border-radius:15px;
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+    }
+
+.titulo {
+    color: black;
+    }
+
+.texto {
+    color: black;
+    }
+
+textarea {
+    background-color: white;
+    border-radius: 5px;
+    color: white;
+    padding: 1% 1% 1% 2%;
+    color: black; 
+    width: 90%;
+    height: 30%;
+    }
+    
+td {
+    color: black;
+    }
+
+.button {
+    border-radius: 10px;
+    color: white;
+    padding: 3% 5%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+
+.rojo {
+    background: linear-gradient(145deg, #ff2d00, #e62600);
+    }
+
+
+.rojo:active {
+    background: linear-gradient(145deg, #e62600, #ff2d00);
+    }
+
+
+.naranja {
+    background: linear-gradient(145deg, #ff9004, #dd7a04);
+    }
+    
+
+.naranja:active {
+    background: linear-gradient(145deg, #dd7a04, #ff9004);
+    }

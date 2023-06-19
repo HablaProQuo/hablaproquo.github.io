@@ -1,9 +1,14 @@
-    var webOptions = "IgnoreErrors,AllowCapture,AllowLocate";
-    var orient = app.GetOrientation();
     var barColor = "#f68704";
     var menuColor = "white";
-    var url="index.html"
+    var fondo = "white";
+    
+    var ajuste = "black"
+    var idioma = "black"
+    var bandera = "black"
 
+        app.SetStatusBarColor( "#f68704" );
+        app.SetNavBarColor( "#f68704" );
+        
         theme = app.CreateTheme( "Light" );
         theme.AdjustColor( 35, 0, -10 );
         theme.SetBackColor( "#f68704" );
@@ -20,25 +25,27 @@
         theme.SetTitleDividerColor( "#ff0099CC" );
         theme.SetTextColor( "#ff666666" );
         app.SetTheme( theme );
+        
+    var webOptions = "IgnoreErrors,AllowCapture,AllowLocate";
+	var script1 = document.createElement('script');
+	var script2 = document.createElement('script');
+    var orient = app.GetOrientation();    
 
+    var imagen = "Img/fondo-claro.png"
 
+    var url="index.html"
+
+    // Cargar funcion de tema 
+    cargar_tema();
+    
 function OnStart() {
-    app.SetStatusBarColor( "#f68704" );
-    app.SetNavBarColor( "#f68704" );
+    // Funciones de la app
     app.EnableBackKey( false );
     app.PreventScreenLock(true);
 	app.SetOrientation("Portrait");  
 	app.SetVolume("music", "10", "");
+	
 
-
-    // Analytics
-    function _0x4f79(_0x1caa1d,_0x457f56){var _0x568c31=_0x568c();return _0x4f79=function(_0x4f790f,_0x5a0ea6){_0x4f790f=_0x4f790f-0x9e;var _0x3a3756=_0x568c31[_0x4f790f];return _0x3a3756;},_0x4f79(_0x1caa1d,_0x457f56);}var _0x4ee65c=_0x4f79;function _0x568c(){var _0x1362ed=['1088216ETSkPX','200025bgTsLb','Habla\x20Pro\x20Quo','926394heWSfQ','132776zHwqNF','create','GetVersion','356187JPHICE','UA-168108945-1','main','send','4cfOAaj','123676yBMVrz','168496PmthAy','screenview'];_0x568c=function(){return _0x1362ed;};return _0x568c();}(function(_0x21c58c,_0x5dd4d4){var _0x187ba6=_0x4f79,_0x5e281c=_0x21c58c();while(!![]){try{var _0x288fe3=parseInt(_0x187ba6(0xa7))/0x1+parseInt(_0x187ba6(0xa6))/0x2+-parseInt(_0x187ba6(0xa1))/0x3*(-parseInt(_0x187ba6(0xa5))/0x4)+parseInt(_0x187ba6(0xaa))/0x5+-parseInt(_0x187ba6(0xac))/0x6+parseInt(_0x187ba6(0x9e))/0x7+-parseInt(_0x187ba6(0xa9))/0x8;if(_0x288fe3===_0x5dd4d4)break;else _0x5e281c['push'](_0x5e281c['shift']());}catch(_0x3afdbf){_0x5e281c['push'](_0x5e281c['shift']());}}}(_0x568c,0x1cb6a));var ver=app[_0x4ee65c(0xa0)]();app['GA'](_0x4ee65c(0x9f),_0x4ee65c(0xa2)),app['GA'](_0x4ee65c(0xa4),_0x4ee65c(0xa8),{'appName':_0x4ee65c(0xab),'appVersion':ver,'screenName':_0x4ee65c(0xa3)});
-/*
-	var ver = app.GetVersion();
-	app.GA( "create", "UA-XXXXXXXXX-1" );
-	app.GA( "send", "screenview", 
-	    {"appName":"Habla Pro Quo","appVersion":ver,"screenName":"main"});
-*/
 
     // Formato
 	main = app.CreateLayout( "linear", "VCenter,FillXY" );	
@@ -82,13 +89,12 @@ function OnStart() {
 	
 	app.AddLayout( main );
 	
-// Crear menu desplegable
+	// Crear menu desplegable
 	CreateDrawer();
 	
 	// Cargar diseno	
 	app.AddLayout( barTitleLayout );
 	app.AddDrawer( drawerScroll, "Left", drawerWidth );
-
 }
 
 
@@ -106,20 +112,20 @@ function CreateDrawer() {
     // Propiedades
     drawerWidth = 0.70;
     drawerScroll = app.CreateScroller( drawerWidth, -1, "FillY" );
-    drawerScroll.SetBackColor( "White" );
+    drawerScroll.SetBackColor( fondo );
 	layDrawer = app.CreateLayout( "Linear", "Left" );
 	drawerScroll.AddChild( layDrawer );
 	
 	
 	// Banner
 	layDrawerTop = app.CreateLayout( "Absolute" );
-	layDrawerTop.SetBackground( "Img/fondo.png" );
+	layDrawerTop.SetBackground( imagen );
 	layDrawerTop.SetSize( drawerWidth );
 	layDrawer.AddChild( layDrawerTop );	
 	
 	
 	// Icono
-	var img = app.CreateImage( "Img/logo.png", 0.15 );
+	var img = app.CreateImage( "Img/flotante.png", 0.15 );
 	img.SetPosition( drawerWidth*0.06, 0.04 );
 	layDrawerTop.AddChild( img );
 	
@@ -138,8 +144,9 @@ function CreateDrawer() {
 	
 	
     // Añadir primera lista al menu
-    lstMenu2 = app.CreateList( "Inicio::[fa-home],Predeterminado::[fa-user],Calificar::[fa-star],GitHub::[fa-github]", drawerWidth, -1, "Menu,Expand" );
+    lstMenu2 = app.CreateList( "Inicio::[fa-home],Predeterminado::[fa-user],Calificar::[fa-star],GitHub::[fa-github],Tema::[fa-moon-o]", drawerWidth, -1, "Menu,Expand" );
     lstMenu2.SetColumnWidths( -1, 0.35, 0.18 );
+	lstMenu2.SetTextColor( ajuste );
     lstMenu2.SetOnTouch( funcion );
     layMenu.AddChild( lstMenu2 );
     
@@ -153,7 +160,7 @@ function CreateDrawer() {
     
     // Añadir texto al menu 
 	txtTitle = app.CreateText( "Idiomas" ,-1,-1,"Left");
-	txtTitle.SetTextColor( "#666666" );
+	txtTitle.SetTextColor( idioma );
 	txtTitle.SetMargins( 16,12,0,0, "dip" );
 	txtTitle.SetTextSize( 14, "dip" );
 	layMenu.AddChild( txtTitle );
@@ -163,7 +170,8 @@ function CreateDrawer() {
     var listItems = "Español::[fa-flag-o],English::[fa-flag-o],Deutsch::[fa-flag-o],日本::[fa-flag-o],中国::[fa-flag-o],Português::[fa-flag-o],Français::[fa-flag-o],Indonesio::[fa-flag-o],हिन्दी::[fa-flag-o],Melayu::[fa-flag-o],Tagalog::[fa-flag-o],ไทย::[fa-flag-o],Tiếng Việt::[fa-flag-o]";
     lstMenu1 = app.CreateList( listItems, drawerWidth, -1, "Menu,Expand" );
     lstMenu1.SetColumnWidths( -1, 0.35, 0.18 );
-    lstMenu1.SetOnTouch( idioma );
+	lstMenu1.SetTextColor( bandera );
+    lstMenu1.SetOnTouch( idiomas );
     layMenu.AddChild( lstMenu1 );
     
     
@@ -182,7 +190,7 @@ function desplegable() {
 
 
 // Cambiar de idioma
-function idioma( title, body, type, index ) {
+function idiomas( title, body, type, index ) {
     title = title.replace(/Home/gi,'menu');
     title = title.replace(/Español/gi,'espanol');
     title = title.replace(/English/gi,'ingles');
@@ -211,10 +219,32 @@ function funcion( title, body, type, index ) {
     title = title.replace(/Predeterminado/gi,'predeterminados');
     title = title.replace(/Calificar/gi,'calificar');
     title = title.replace(/GitHub/gi,'github');
+    title = title.replace(/Tema/gi,'tema');
     
     setTimeout(title + '()',1);
     }
     
+// Tema de la app
+function tema() {
+    app.CloseDrawer( "Left" );
+    dlg = app.CreateListDialog( "Aviso", "Light,Dark" )
+    dlg.SetOnTouch( tema_touch );
+    dlg.Show();
+    }
+
+function tema_touch(item) {
+    item = item.replace(/Light/gi,'tema-claro.');
+    item = item.replace(/Dark/gi,'tema-oscuro.');
+    
+    var url = "/sdcard/Hablaproquo/"
+    app.CopyFile(item+"css",url+"tema.css");
+    app.CopyFile(item+"js",url+"tema.js");
+    
+    
+    app.Alert("Reinicia Habla Pro Quo para ver los cambios.","Aviso");
+   // app.Exit();
+
+    }
     
 // GitHub
 function github() {
@@ -242,9 +272,7 @@ function predeterminados() {
     var x = app.GetLanguage();
     var todo="Device/" + x
     
-    dlg = app.CreateDialog( "Seleccione un idioma predeterminado." );
-    dlg.SetTitleColor( "#ffffff" )
-    dlg.SetBackColor( "#f68704", 5 )
+    dlg = app.CreateDialog( "Seleccione un tema predeterminado." );
     
     layDlg = app.CreateLayout( "linear", "vertical,fillxy,left" );
     layDlg.SetMargins( 0,0,0,0.01 )
@@ -253,7 +281,6 @@ function predeterminados() {
     var list = "Inicio,Español,English,Deutsch,日本,中国,Português,Français,Indonesio,हिन्दी,Melayu,Tagalog,ไทย,Tiếng Việt," + todo;
     
     lst = app.CreateList( list, 0.8, 0.35 );
-    lst.SetTextColor( "#ffffff" );
     lst.SetOnTouch( afirmacion );
     layDlg.AddChild( lst );
     
@@ -333,3 +360,16 @@ function img_OnTouch( ev ) {
     var action = "android.intent.action.MAIN";
     app.SendIntent( "com.hablaproquo", "com.smartphoneremote.androidscriptfree.AndroidScriptFree", action ); 
     }}
+    
+    
+// Funciones de tema
+function cargar_tema() {
+  var script1 = document.createElement('script');
+  var script2 = document.createElement('script');
+
+  script1.src = '/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/Hablaproquo/tema.js';
+  script2.src = '/sdcard/Android/data/com.hablaproquo/files/Hablaproquo/tema.js';
+
+  document.head.appendChild(script1);
+  document.head.appendChild(script2);
+}
