@@ -17,6 +17,8 @@ Este proyecto es compatible con dispositivos moviles, tablets, Wear OS y SmartWa
 Si desea probar la app puede hacerlo desde este [enlace,](https://play.google.com/store/apps/details?id=com.hablaproquo) en caso de que su dispositivo Android no sea compatible, puede usar la versión [lite.](https://github.com/HablaProQuo/hablaproquo.github.io/releases) o puede usar su versión [web.](https://hablaproquo.github.io)
 
 # Actualización
+Se añadió el modo oscuro.
+
 Se añadieron los siguintes idiomas
 
 - Español
